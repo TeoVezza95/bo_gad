@@ -128,6 +128,11 @@ export interface ActStorni{
     KPI_UPDATE_DATE: string
 }
 
+export interface SacsServiceOperation{
+    CAUSAL: string,
+    N_OPERATIONS: number
+}
+
 // TableColumn.ts
 export interface TableColumn<T, K extends keyof T = keyof T> {
     /** Testo da mostrare nell'intestazione della colonna */

@@ -4,6 +4,10 @@ import { CardsContainer } from "@/components/CardsContainer.tsx";
 import { TestChart } from "@/components/Grt/TestChart.tsx";
 import { gevTransactionSummary } from "@/services/gev_services.ts";
 import {ldtTransactionSummary} from "@/services/ldt_services.ts";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx";
+import {actBonusColumns, sacsServiceOperationsColumns} from "@/components/GenericTableColumn.tsx";
+import {GenericTable} from "@/components/GenericTable.tsx";
+import {ActBonus, SacsServiceOperation} from "@/interfaces.ts";
 
 // Definizione del tipo per gli elementi delle transazioni
 interface TransactionSummary {
@@ -21,6 +25,46 @@ const HomePage = () => {
     const [gevTransactionsNumber, setGevTransactionsNumber] = useState<TransactionSummary[]>([]);
     const [ldtTransactionsNumber, setLdtTransactionsNumber] = useState<TransactionSummary[]>([]);
     const [transactionsNumber, setTransactionsNumber] = useState<ChartDataItem[]>([]);
+    const [sacsServiceOperations, setBonus] = useState<SacsServiceOperation[]>(
+        [
+            {
+                "CAUSAL": "20",
+                "N_OPERATIONS": 10
+            },
+            {
+                "CAUSAL": "21",
+                "N_OPERATIONS": 10
+            },
+            {
+                "CAUSAL": "22",
+                "N_OPERATIONS": 10
+            },
+            {
+                "CAUSAL": "23",
+                "N_OPERATIONS": 10
+            },
+            {
+                "CAUSAL": "24",
+                "N_OPERATIONS": 10
+            },
+            {
+                "CAUSAL": "25",
+                "N_OPERATIONS": 10
+            },
+            {
+                "CAUSAL": "26",
+                "N_OPERATIONS": 10
+            },
+            {
+                "CAUSAL": "27",
+                "N_OPERATIONS": 10
+            },
+            {
+                "CAUSAL": "28",
+                "N_OPERATIONS": 10
+            }
+        ]
+    )
 
     useEffect(() => {
         gevTransactionSummary().then((response: TransactionSummary[]) => {
@@ -66,18 +110,27 @@ const HomePage = () => {
     ];
 
     const chartConfig2: Record<string, { label: string; color: string }> = {
-        views: { label: "Page Views", color: "hsl(var(--chart-3))" }, // 🔹 Aggiunto color
         gev: { label: "Gev", color: "hsl(var(--chart-1))" },
         ldt: { label: "Ldt", color: "hsl(var(--chart-2))" },
+        lotto: { label: "Lotto", color: "hsl(var(--chart-3))" },
+        virtual: { label: "Virtual", color: "hsl(var(--chart-4))" },
     };
 
     return (
         <>
+
             <div className="size-full">HOMEPAGE</div>
-            <CardsContainer items={data} />
-            <div className="w-[50%] mx-auto">
-                {transactionsNumber.length >0 && <TestChart data={transactionsNumber} config={chartConfig2} />}
-                <Chart />
+            <CardsContainer items={data}/>
+            <div className="flex gap-2">
+                <div className="">
+                    {transactionsNumber.length > 0 && <TestChart data={transactionsNumber} config={chartConfig2}/>}
+                </div>
+                <Card className="w-1/2">
+                    <CardHeader className="font-bold">Ultime Operazioni di Servizio</CardHeader>
+                    <CardContent>
+                        <GenericTable data={sacsServiceOperations} columns={sacsServiceOperationsColumns}/>
+                    </CardContent>
+                </Card>
             </div>
         </>
     );

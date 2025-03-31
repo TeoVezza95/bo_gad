@@ -5,7 +5,7 @@ import {
     LdtContest,
     LdtRegistryKey,
     LdtTransaction, LorContest, LorRegistryKey,
-    LorTransaction, LorWinning, OnpTransaction,
+    LorTransaction, LorWinning, OnpTransaction, SacsServiceOperation,
     TableColumn
 } from "@/interfaces.ts";
 import {Badge} from "@/components/ui/badge.tsx";
@@ -46,6 +46,26 @@ const processedMapping: { [key: string]: JSX.Element } = {
     "1": <Badge variant="success">Processato</Badge>,
     "0": <Badge variant="warning">Da Processare</Badge>,
     "-1": <Badge variant="destructive">Errore</Badge>,
+};
+
+const sacsServiceOperationsMapping: { [key: string]: JSX.Element } = {
+    "20": <b>Apertura Conto Persona Fisica</b>,
+    "21": <b>Apertura Conto Persona Giuridica</b>,
+    "22": <b>Cambio Stato Conto</b>,
+    "23": <b>Saldo Conto</b>,
+    "24": <b>Modifica Provincia Residenza</b>,
+    "25": <b>Interrogazione Stato Conto</b>,
+    "26": <b>Subregistrazione</b>,
+    "27": <b>Modifica Dati Documento Titolare Conto</b>,
+    "28": <b>Migrazione Conto Di Gioco</b>,
+    "33": <b>Apertura Semplificata Conto Persona Fisica</b>,
+    "34": <b>Integrazione Apertura Semplificata Conto Persona Fisica</b>,
+    "35": <b>Conto Dormiente</b>,
+    "36": <b>Interrogazione Estremi Documento</b>,
+    "37": <b>Gestione Autoesclusione Trasversale</b>,
+    "38": <b>Aggiorna Limiti Conto</b>,
+    "39": <b>Aggiorna Pseudonimo Conto</b>,
+    "40": <b>Aggiorna Posta Elettronica Conto</b>,
 };
 
 export const gevTransactionColumns: TableColumn<GevTransaction>[] = [
@@ -176,7 +196,12 @@ export const ewlColumns: TableColumn<EwlTransaction>[] = [
 export const aperGiurFormColumns: TableColumn<ActStorni>[] = [
     {header: "ID", accessor:"ID"},
     {header: "ID Tipo", accessor:"ID"},
-]
+];
+
+export const sacsServiceOperationsColumns: TableColumn<SacsServiceOperation>[] = [
+    {header: "Causale", accessor: "CAUSAL", render: (value) => sacsServiceOperationsMapping[String(value)] || <Badge variant={"default"}>{value}</Badge>,},
+    {header: "Numero Operazioni", accessor:"N_OPERATIONS"},
+];
 
 
 
