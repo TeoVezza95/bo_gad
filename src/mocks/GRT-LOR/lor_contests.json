@@ -1,0 +1,703 @@
+{
+"contests": [
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "G0001063084",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-29T11:02:38.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "K0001093026",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-29T11:02:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "K0001093027",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-29T11:01:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "U0001078043",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-29T11:01:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "D0001100008",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-29T11:01:36.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "T0001083024",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-29T10:48:38.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20250128000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T19:15:11.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "W0001096008",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T14:52:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "B0001076053",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T14:52:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "R0001080073",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T14:51:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "E0001082059",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T14:51:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "B0001076054",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T14:51:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "B0001076052",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T14:51:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "B0001076051",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T14:50:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "Z0001095088",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T14:48:38.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "J0001059115",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T14:47:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "Y0001088083",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T13:04:38.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "F0001084066",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T13:04:38.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "W0001096007",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T13:04:38.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "S0001023045",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T13:04:38.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "D0001100007",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T13:04:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "N0001087025",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T13:02:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "C0001078015",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T13:02:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "A0001055005",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T13:02:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "L0001089025",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T13:02:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "T0001083021",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:55:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "L0001089026",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:55:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "T0001083020",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:55:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "X0001057023",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:55:39.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "S0001023043",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:52:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "O0001091011",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:51:38.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "P0001092033",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:51:38.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "O0001091012",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:51:38.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "S0001023042",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:51:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "B0001076049",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:51:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "M0001098021",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:51:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "M0001098020",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:51:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "E0001082057",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:50:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "E0001082056",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-28T09:50:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "C0001078012",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-27T17:15:39.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20250124000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T19:15:13.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "G0001062094",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:28:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "T0001082027",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:28:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "H0001100103",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:26:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "J0001058116",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:26:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "Z0001094090",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:26:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "S0001022045",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:26:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "A0001054010",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "G0001062093",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "T0001082026",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "R0001079078",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "X0001056029",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "L0001088026",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "D0001099013",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "D0001099014",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "C0001077020",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:39.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "Z0001094089",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:39.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "V0001086056",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:25:39.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "Y0001087080",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:06:38.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "C0001077019",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:05:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "S0001022044",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:05:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "E0001081056",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:05:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "E0001081055",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:05:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "K0001092028",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:05:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "V0001086055",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:05:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "F0001083061",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:05:39.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "H0001100102",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:05:39.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "R0001079077",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-24T09:04:37.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20250123000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-23T19:15:13.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "G0001062092",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-23T19:02:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "A0001054008",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-23T10:59:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "A0001054009",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-23T10:59:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "O0001090011",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-23T10:59:37.000Z"
+	},
+	{
+		"contestType" : "MILLIONDAY",
+		"contestCode" : "20250122000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T19:40:57.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "T0001082022",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T14:46:37.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO FREQUENTE",
+		"contestCode" : "20250122172",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:20:44.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO FREQUENTE",
+		"contestCode" : "20250122168",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:00:46.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "S0001022042",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:00:41.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "C0001077014",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:00:41.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "R0001079076",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:00:41.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "C0001077012",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:00:41.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "D0001099007",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:00:41.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "T0001082021",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:00:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "R0001079075",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:00:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "O0001090009",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:00:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO IMMEDIATA",
+		"contestCode" : "Q0001099006",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-22T13:00:40.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO FREQUENTE",
+		"contestCode" : "20250121206",
+		"winningBets" : "1",
+		"processed" : 1,
+		"closureDate" : "2025-01-21T16:12:37.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20250117000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-17T19:15:11.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20250116000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-16T19:15:07.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20250114000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-14T19:15:14.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20250110000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-10T19:15:10.000Z"
+	},
+	{
+		"contestType" : "MILLIONDAY",
+		"contestCode" : "20250109000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-09T19:41:09.000Z"
+	},
+	{
+		"contestType" : "10ELOTTO LOTTO",
+		"contestCode" : "20250109000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-09T19:00:43.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20250109000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-09T19:00:22.000Z"
+	},
+	{
+		"contestType" : "MILLIONDAY",
+		"contestCode" : "20250108000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-08T19:41:01.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20250107000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-07T17:00:16.000Z"
+	},
+	{
+		"contestType" : "MILLIONDAY",
+		"contestCode" : "20250107001",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-07T12:11:14.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20250104000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2025-01-04T17:00:17.000Z"
+	},
+	{
+		"contestType" : "MILLIONDAY",
+		"contestCode" : "20241221001",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2024-12-21T12:10:54.000Z"
+	},
+	{
+		"contestType" : "LOTTO",
+		"contestCode" : "20241220000",
+		"winningBets" : "0",
+		"processed" : 1,
+		"closureDate" : "2024-12-20T19:15:10.000Z"
+	}
+]}

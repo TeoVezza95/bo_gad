@@ -1,0 +1,804 @@
+{
+    "transactions": [
+        {
+            "amount": 400,
+            "contestCode": "U0001078043",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122605",
+            "wagerDate": "2025-01-29T11:00:11.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "K0001093027",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122604",
+            "wagerDate": "2025-01-29T11:00:04.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "K0001093026",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122603",
+            "wagerDate": "2025-01-29T10:59:57.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "D0001100008",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122602",
+            "wagerDate": "2025-01-29T10:59:50.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "T0001083024",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122599",
+            "wagerDate": "2025-01-29T10:46:33.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "E0001082059",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122584",
+            "wagerDate": "2025-01-28T14:50:33.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "W0001096008",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122583",
+            "wagerDate": "2025-01-28T14:50:24.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "B0001076054",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122582",
+            "wagerDate": "2025-01-28T14:50:16.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "B0001076053",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122581",
+            "wagerDate": "2025-01-28T14:50:10.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "B0001076052",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122580",
+            "wagerDate": "2025-01-28T14:50:05.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "R0001080073",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122579",
+            "wagerDate": "2025-01-28T14:49:58.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "B0001076051",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122578",
+            "wagerDate": "2025-01-28T14:47:31.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "Z0001095088",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122577",
+            "wagerDate": "2025-01-28T14:46:54.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "J0001059115",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122576",
+            "wagerDate": "2025-01-28T14:46:25.000Z"
+        },
+        {
+            "amount": 1500,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "149639371971",
+            "id": "L000000000122575",
+            "wagerDate": "2025-01-28T13:58:19.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "F0001084066",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122567",
+            "wagerDate": "2025-01-28T09:54:41.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "L0001089026",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122566",
+            "wagerDate": "2025-01-28T09:54:35.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "W0001096007",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122565",
+            "wagerDate": "2025-01-28T09:54:29.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "T0001083021",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122564",
+            "wagerDate": "2025-01-28T09:54:21.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "T0001083020",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122563",
+            "wagerDate": "2025-01-28T09:54:16.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "S0001023045",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122562",
+            "wagerDate": "2025-01-28T09:54:09.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "Y0001088083",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122561",
+            "wagerDate": "2025-01-28T09:54:04.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "D0001100007",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122560",
+            "wagerDate": "2025-01-28T09:53:58.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "L0001089025",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122559",
+            "wagerDate": "2025-01-28T09:53:52.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "X0001057023",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122558",
+            "wagerDate": "2025-01-28T09:53:46.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "N0001087025",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122557",
+            "wagerDate": "2025-01-28T09:53:40.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122556",
+            "wagerDate": "2025-01-28T09:53:08.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122555",
+            "wagerDate": "2025-01-28T09:53:02.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122554",
+            "wagerDate": "2025-01-28T09:52:56.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122553",
+            "wagerDate": "2025-01-28T09:52:50.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122552",
+            "wagerDate": "2025-01-28T09:52:43.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122551",
+            "wagerDate": "2025-01-28T09:52:37.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122550",
+            "wagerDate": "2025-01-28T09:52:30.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122549",
+            "wagerDate": "2025-01-28T09:52:24.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122548",
+            "wagerDate": "2025-01-28T09:52:17.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122547",
+            "wagerDate": "2025-01-28T09:52:11.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122546",
+            "wagerDate": "2025-01-28T09:52:05.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250128000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122545",
+            "wagerDate": "2025-01-28T09:51:58.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "S0001023043",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122544",
+            "wagerDate": "2025-01-28T09:50:59.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "C0001078015",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122543",
+            "wagerDate": "2025-01-28T09:50:29.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "O0001091012",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122542",
+            "wagerDate": "2025-01-28T09:50:23.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "A0001055005",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122541",
+            "wagerDate": "2025-01-28T09:50:17.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "O0001091011",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122540",
+            "wagerDate": "2025-01-28T09:50:11.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "P0001092033",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122539",
+            "wagerDate": "2025-01-28T09:50:05.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "M0001098021",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122538",
+            "wagerDate": "2025-01-28T09:49:59.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "S0001023042",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122537",
+            "wagerDate": "2025-01-28T09:49:53.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "M0001098020",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122536",
+            "wagerDate": "2025-01-28T09:49:47.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "B0001076049",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122535",
+            "wagerDate": "2025-01-28T09:49:42.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "E0001082057",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122534",
+            "wagerDate": "2025-01-28T09:49:36.000Z"
+        },
+        {
+            "amount": 400,
+            "contestCode": "E0001082056",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122533",
+            "wagerDate": "2025-01-28T09:48:39.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "C0001078012",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122508",
+            "wagerDate": "2025-01-27T10:20:37.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "T0001082027",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122478",
+            "wagerDate": "2025-01-24T09:25:01.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "G0001062094",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122477",
+            "wagerDate": "2025-01-24T09:24:55.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "S0001022045",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122476",
+            "wagerDate": "2025-01-24T09:24:49.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "H0001100103",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122475",
+            "wagerDate": "2025-01-24T09:24:41.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "G0001062093",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122473",
+            "wagerDate": "2025-01-24T09:24:34.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "L0001088026",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122474",
+            "wagerDate": "2025-01-24T09:24:34.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "D0001099014",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122472",
+            "wagerDate": "2025-01-24T09:24:29.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "T0001082026",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122471",
+            "wagerDate": "2025-01-24T09:24:24.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "R0001079078",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122470",
+            "wagerDate": "2025-01-24T09:24:18.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "X0001056029",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122469",
+            "wagerDate": "2025-01-24T09:24:13.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "A0001054010",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122468",
+            "wagerDate": "2025-01-24T09:24:07.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "D0001099013",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122467",
+            "wagerDate": "2025-01-24T09:24:06.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "Z0001094090",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122466",
+            "wagerDate": "2025-01-24T09:24:01.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "C0001077020",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122465",
+            "wagerDate": "2025-01-24T09:23:54.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "Z0001094089",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122464",
+            "wagerDate": "2025-01-24T09:23:47.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "V0001086056",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122463",
+            "wagerDate": "2025-01-24T09:23:40.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "J0001058116",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122462",
+            "wagerDate": "2025-01-24T09:23:33.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "E0001081056",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122458",
+            "wagerDate": "2025-01-24T09:04:31.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "S0001022044",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122457",
+            "wagerDate": "2025-01-24T09:04:24.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "K0001092028",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122456",
+            "wagerDate": "2025-01-24T09:04:17.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "V0001086055",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122455",
+            "wagerDate": "2025-01-24T09:04:10.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "C0001077019",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122454",
+            "wagerDate": "2025-01-24T09:04:03.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "E0001081055",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122453",
+            "wagerDate": "2025-01-24T09:03:56.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "F0001083061",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122452",
+            "wagerDate": "2025-01-24T09:03:49.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "H0001100102",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122451",
+            "wagerDate": "2025-01-24T09:03:41.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "R0001079077",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122450",
+            "wagerDate": "2025-01-24T09:03:33.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "Y0001087080",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122449",
+            "wagerDate": "2025-01-24T09:03:25.000Z"
+        },
+        {
+            "amount": 200,
+            "contestCode": "20250124000",
+            "contestType": "LOTTO",
+            "contractid": "109436813821",
+            "id": "L000000000122442",
+            "wagerDate": "2025-01-24T07:08:38.000Z"
+        },
+        {
+            "amount": 500,
+            "contestCode": "A0001054009",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122429",
+            "wagerDate": "2025-01-23T10:58:32.000Z"
+        },
+        {
+            "amount": 500,
+            "contestCode": "A0001054008",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122428",
+            "wagerDate": "2025-01-23T10:58:24.000Z"
+        },
+        {
+            "amount": 500,
+            "contestCode": "G0001062092",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122427",
+            "wagerDate": "2025-01-23T10:58:16.000Z"
+        },
+        {
+            "amount": 500,
+            "contestCode": "O0001090011",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122426",
+            "wagerDate": "2025-01-23T10:58:08.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "T0001082022",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122398",
+            "wagerDate": "2025-01-22T14:45:34.000Z"
+        },
+        {
+            "amount": 500,
+            "contestCode": null,
+            "contestType": null,
+            "contractid": "116938536096",
+            "id": "D342332532523",
+            "wagerDate": "2025-01-22T14:17:48.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "20250122000",
+            "contestType": "MILLIONDAY",
+            "contractid": "100543227452",
+            "id": "M000000000122397",
+            "wagerDate": "2025-01-22T13:56:47.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "20250122172",
+            "contestType": "10ELOTTO FREQUENTE",
+            "contractid": "109436813821",
+            "id": "D000000000122396",
+            "wagerDate": "2025-01-22T13:17:18.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "20250123000",
+            "contestType": "LOTTO",
+            "contractid": "109436813821",
+            "id": "L000000000122395",
+            "wagerDate": "2025-01-22T13:02:07.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "20250122168",
+            "contestType": "10ELOTTO FREQUENTE",
+            "contractid": "109436813821",
+            "id": "D000000000122394",
+            "wagerDate": "2025-01-22T12:57:42.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "20250123000",
+            "contestType": "LOTTO",
+            "contractid": "116938536096",
+            "id": "L000000000122393",
+            "wagerDate": "2025-01-22T11:47:07.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "R0001079076",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122390",
+            "wagerDate": "2025-01-22T11:22:36.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "C0001077014",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "144218879375",
+            "id": "D000000000122386",
+            "wagerDate": "2025-01-22T09:57:33.000Z"
+        },
+        {
+            "amount": 500,
+            "contestCode": null,
+            "contestType": null,
+            "contractid": "109436813821",
+            "id": "M133000000129722",
+            "wagerDate": "2025-01-21T16:21:49.000Z"
+        },
+        {
+            "amount": 20,
+            "contestCode": "20150311220",
+            "contestType": "10ELOTTO FREQUENTE",
+            "contractid": "109436813821",
+            "id": "M133000000129722_R",
+            "wagerDate": "2025-01-21T16:21:49.000Z"
+        },
+        {
+            "amount": 500,
+            "contestCode": null,
+            "contestType": null,
+            "contractid": "109436813821",
+            "id": "D811000000129722",
+            "wagerDate": "2025-01-21T16:10:43.000Z"
+        },
+        {
+            "amount": 500,
+            "contestCode": "20150311220",
+            "contestType": "10ELOTTO FREQUENTE",
+            "contractid": "109436813821",
+            "id": "D810000000129722",
+            "wagerDate": "2025-01-21T16:08:56.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "20250121206",
+            "contestType": "10ELOTTO FREQUENTE",
+            "contractid": "109436813821",
+            "id": "D000000000122385",
+            "wagerDate": "2025-01-21T16:08:11.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": null,
+            "contestType": null,
+            "contractid": "109436813821",
+            "id": "D000000000122384",
+            "wagerDate": "2025-01-21T15:58:30.000Z"
+        },
+        {
+            "amount": 500,
+            "contestCode": null,
+            "contestType": null,
+            "contractid": "109436813821",
+            "id": "D700000000129722",
+            "wagerDate": "2025-01-21T15:53:32.000Z"
+        },
+        {
+            "amount": 100,
+            "contestCode": "S0001022042",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "contractid": "116938536096",
+            "id": "D000000000122380",
+            "wagerDate": "2025-01-21T13:56:00.000Z"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "registerKeys": [
+        {
+            "clientIp": "3.2.3.1",
+            "contractId": "144218879375",
+            "cryptedData": "sN6cmJSsZvrGmgZ+QA0nIIOE50QOxcnRjNhtN0aKbnBuvAXLi0A6aRS2epHjfjk3ZZDq0sOjK0E2vk5wQK3N2kdT1bLG0pbttITfoZdVKRMi7MffY+G9mYhIp8x7Yx2j",
+            "registrationDate": "2025-01-31T11:27:53.000Z"
+        },
+        {
+            "clientIp": "3.2.3.3",
+            "contractId": "161156904544",
+            "cryptedData": "TCgVH+AYrqIusTO4Z9OBOmjSLl+6GkaMIJ67/0wN290XR4HHrbdhbnNdW/bDJwspevbz6WJZpcWbTWNgAAoNNOhl5/8oArVBNwZLmYn1rgchpohyVEIEUA==",
+            "registrationDate": "2025-01-31T16:20:47.000Z"
+        }
+    ]
+}

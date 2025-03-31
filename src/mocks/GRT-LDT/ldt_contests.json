@@ -1,0 +1,175 @@
+{
+    "contests": [
+        {
+            "insertDate": "2024-08-20T02:00:00.000Z",
+            "updateDate": "2024-08-20T02:00:00.000Z",
+            "gameChannel": "2",
+            "gameId": "31005",
+            "gameName": "LDT 2024 Mobile",
+            "status": "A",
+            "lotteryId": "5135"
+        },
+        {
+            "insertDate": "2024-08-20T02:00:00.000Z",
+            "updateDate": "2024-08-20T02:00:00.000Z",
+            "gameChannel": "1",
+            "gameId": "30005",
+            "gameName": "LDT 2024 Online",
+            "status": "A",
+            "lotteryId": "5135"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "1",
+            "gameId": "100176",
+            "gameName": "Gioco Test Online",
+            "status": "S",
+            "lotteryId": "4211"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "2",
+            "gameId": "101076",
+            "gameName": "Gioco Test Mobile",
+            "status": "S",
+            "lotteryId": "4211"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "1",
+            "gameId": "30001",
+            "gameName": "LDT 2020 Online",
+            "status": "A",
+            "lotteryId": "5131"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "2",
+            "gameId": "31001",
+            "gameName": "LDT 2020 Mobile",
+            "status": "A",
+            "lotteryId": "5131"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "2",
+            "gameId": "31000",
+            "gameName": "Lotteria Italia 2019 Mobile",
+            "status": "A",
+            "lotteryId": "1005"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "1",
+            "gameId": "666666",
+            "gameName": "gioco prova2",
+            "status": "C",
+            "lotteryId": "5134"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "1",
+            "gameId": "30000",
+            "gameName": "Lotteria Italia 2019",
+            "status": "A",
+            "lotteryId": "1005"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "2",
+            "gameId": "31002",
+            "gameName": "LDT 2021 Mobile",
+            "status": "A",
+            "lotteryId": "5132"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "1",
+            "gameId": "30004",
+            "gameName": "LDT 2023 Online",
+            "status": "A",
+            "lotteryId": "5134"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "2",
+            "gameId": "31004",
+            "gameName": "LDT 2023 Mobile",
+            "status": "A",
+            "lotteryId": "5134"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "1",
+            "gameId": "300377",
+            "gameName": "gioco prova",
+            "status": "A",
+            "lotteryId": "7777"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "2",
+            "gameId": "301377",
+            "gameName": "gioco prova mobile",
+            "status": "A",
+            "lotteryId": "7777"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "1",
+            "gameId": "30003",
+            "gameName": "LDT 2022 Online",
+            "status": "A",
+            "lotteryId": "5133"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "2",
+            "gameId": "31003",
+            "gameName": "LDT 2022 Mobile",
+            "status": "A",
+            "lotteryId": "5133"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "2",
+            "gameId": "29001",
+            "gameName": "Lotteria Test Mobile",
+            "status": "S",
+            "lotteryId": "5129"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "1",
+            "gameId": "29000",
+            "gameName": "Lotteria Test Online",
+            "status": "S",
+            "lotteryId": "5129"
+        },
+        {
+            "insertDate": "2024-07-24T06:15:00.000Z",
+            "updateDate": "2024-07-24T06:15:00.000Z",
+            "gameChannel": "1",
+            "gameId": "30002",
+            "gameName": "LDT 2021 Online",
+            "status": "A",
+            "lotteryId": "5132"
+        }
+    ]
+}

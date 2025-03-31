@@ -1,0 +1,364 @@
+{
+    "winningLists": [
+        {
+            "communicationDate": "2025-01-24T09:25:37.000Z",
+            "contestCode": "G0001062094",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 309,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2025-01-24T09:25:37.000Z",
+            "contestCode": "T0001082027",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 310,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2025-01-24T09:24:35.000Z",
+            "contestCode": "Z0001094090",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 308,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2025-01-24T09:23:35.000Z",
+            "contestCode": "J0001058116",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 307,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2025-01-24T09:03:36.000Z",
+            "contestCode": "Y0001087080",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 306,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2025-01-23T19:00:37.000Z",
+            "contestCode": "G0001062092",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 305,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2025-01-22T15:38:17.000Z",
+            "contestCode": "20220210000",
+            "contestType": "10ELOTTO LOTTO",
+            "id": 304,
+            "notified": -1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2025-01-22T15:05:06.000Z",
+            "contestCode": "20220210000-",
+            "contestType": "10ELOTTO LOTTO",
+            "id": 303,
+            "notified": -1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2025-01-21T16:10:32.000Z",
+            "contestCode": "20250121206",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 302,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-20T13:57:36.000Z",
+            "contestCode": "F0001078062",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 282,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-18T10:53:35.000Z",
+            "contestCode": "B0001070046",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 281,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-14T10:37:36.000Z",
+            "contestCode": "H0001094103",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 272,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-14T10:10:35.000Z",
+            "contestCode": "20241214134",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 271,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-13T19:32:41.000Z",
+            "contestCode": "20241213000",
+            "contestType": "MILLIONDAY",
+            "id": 270,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-13T19:09:35.000Z",
+            "contestCode": "20241213000",
+            "contestType": "10ELOTTO LOTTO",
+            "id": 269,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-13T19:09:01.000Z",
+            "contestCode": "20241213000",
+            "contestType": "LOTTO",
+            "id": 268,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-13T19:00:35.000Z",
+            "contestCode": "20241213240",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 267,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-12T19:09:02.000Z",
+            "contestCode": "20241212000",
+            "contestType": "LOTTO",
+            "id": 266,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-12T12:02:49.000Z",
+            "contestCode": "20241212001",
+            "contestType": "MILLIONDAY",
+            "id": 265,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-12T09:45:34.000Z",
+            "contestCode": "20241212129",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 264,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-11T19:33:50.000Z",
+            "contestCode": "20241211000",
+            "contestType": "MILLIONDAY",
+            "id": 263,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-11T15:20:38.000Z",
+            "contestCode": "20241211196",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 262,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-11T15:00:37.000Z",
+            "contestCode": "U0001070040",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 261,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-05T19:09:01.000Z",
+            "contestCode": "20241205000",
+            "contestType": "LOTTO",
+            "id": 250,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-05T12:02:39.000Z",
+            "contestCode": "20241205001",
+            "contestType": "MILLIONDAY",
+            "id": 249,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-05T09:30:39.000Z",
+            "contestCode": "20241205126",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 248,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-05T09:30:32.000Z",
+            "contestCode": "20241205126",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 247,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-04T09:15:16.000Z",
+            "contestCode": "20241203000",
+            "contestType": "LOTTO",
+            "id": 246,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-04T09:15:15.000Z",
+            "contestCode": "20241203000",
+            "contestType": "10ELOTTO LOTTO",
+            "id": 245,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-03T12:02:48.000Z",
+            "contestCode": "20241203001",
+            "contestType": "MILLIONDAY",
+            "id": 244,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-03T11:27:36.000Z",
+            "contestCode": "20241203149",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 243,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-03T11:25:33.000Z",
+            "contestCode": "20241203149",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 242,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-12-03T11:18:36.000Z",
+            "contestCode": "J0001051128",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 241,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-22T09:51:40.000Z",
+            "contestCode": "20241122130",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 222,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-20T10:42:40.000Z",
+            "contestCode": "20241120140",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 221,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-12T08:39:36.000Z",
+            "contestCode": "S0001011053",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 203,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-12T08:39:35.000Z",
+            "contestCode": "S0001011044",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 201,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-12T08:39:35.000Z",
+            "contestCode": "S0001011049",
+            "contestType": "10ELOTTO IMMEDIATA",
+            "id": 202,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-08T19:33:11.000Z",
+            "contestCode": "20241108000",
+            "contestType": "MILLIONDAY",
+            "id": 187,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-08T19:09:00.000Z",
+            "contestCode": "20241108000",
+            "contestType": "LOTTO",
+            "id": 186,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-08T14:27:37.000Z",
+            "contestCode": "20241108185",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 185,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-08T14:25:33.000Z",
+            "contestCode": "20241108185",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 184,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-08T13:35:34.000Z",
+            "contestCode": "20241108175",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 183,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-08T12:57:36.000Z",
+            "contestCode": "20241108167",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 182,
+            "notified": 1,
+            "processed": 1
+        },
+        {
+            "communicationDate": "2024-11-08T12:55:33.000Z",
+            "contestCode": "20241108167",
+            "contestType": "10ELOTTO FREQUENTE",
+            "id": 181,
+            "notified": 1,
+            "processed": 1
+        }
+    ]
+}
