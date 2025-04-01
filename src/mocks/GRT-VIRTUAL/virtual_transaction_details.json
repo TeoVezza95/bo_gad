@@ -1,5 +1,10 @@
 {
   "id": "R2502171605289566C6AFGNT7FXG14D3K",
+  "ticketId": "EC000D9F7E03",
+  "wagerAmount:": 150,
+  "winAmount": 204,
+  "refundAmount": 0,
+  "ticketStatus": 3,
   "bets": [
     {
       "bet": "Vincente",
