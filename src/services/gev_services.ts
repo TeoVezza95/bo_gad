@@ -56,3 +56,15 @@ export const gevTransactionSummary = async () => {
     }
     throw new Error(`Risposta non valida dal server per ${properties.rest.gev.transactions}${properties.rest.gev.summary}`);
 }
+
+export const lorTransactionSummary = async () => {
+
+    const response = await axios.get(`${properties.rest.lor.baseUrl}${properties.rest.lor.transactions}${properties.rest.lor.summary}`, {});
+
+    if (response && response.data) {
+        const transactions = response.data.transactions || response.data; // Fallback in caso di struttura diversa
+        console.log("test gevtrans summary ",response)
+        return transactions;
+    }
+    throw new Error(`Risposta non valida dal server per ${properties.rest.lor.transactions}${properties.rest.lor.summary}`);
+}

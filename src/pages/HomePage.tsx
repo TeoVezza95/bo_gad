@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { Chart } from "@/components/Chart.tsx";
 import { CardsContainer } from "@/components/CardsContainer.tsx";
 import { TestChart } from "@/components/Grt/TestChart.tsx";
-import { gevTransactionSummary } from "@/services/gev_services.ts";
+import {gevTransactionSummary, lorTransactionSummary} from "@/services/gev_services.ts";
 import {ldtTransactionSummary} from "@/services/ldt_services.ts";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx";
 import {actBonusColumns, sacsServiceOperationsColumns} from "@/components/GenericTableColumn.tsx";
 import {GenericTable} from "@/components/GenericTable.tsx";
 import {ActBonus, SacsServiceOperation} from "@/interfaces.ts";
+import {lorTransactions} from "@/services/lor_services.ts";
 
 // Definizione del tipo per gli elementi delle transazioni
 interface TransactionSummary {
@@ -24,8 +25,9 @@ interface ChartDataItem {
 const HomePage = () => {
     const [gevTransactionsNumber, setGevTransactionsNumber] = useState<TransactionSummary[]>([]);
     const [ldtTransactionsNumber, setLdtTransactionsNumber] = useState<TransactionSummary[]>([]);
+    const [lorTransactionsNumber, setLorTransactionsNumber] = useState<TransactionSummary[]>([]);
     const [transactionsNumber, setTransactionsNumber] = useState<ChartDataItem[]>([]);
-    const [sacsServiceOperations, setBonus] = useState<SacsServiceOperation[]>(
+    const [sacsServiceOperations, setSacsServiceOperations] = useState<SacsServiceOperation[]>(
         [
             {
                 "CAUSAL": "20",
@@ -73,6 +75,9 @@ const HomePage = () => {
         ldtTransactionSummary().then((response: TransactionSummary[]) => {
             setLdtTransactionsNumber(response || []);
         });
+        lorTransactionSummary().then((response: TransactionSummary[]) => {
+            setLorTransactionsNumber(response || []);
+        });
     }, []);
 
     useEffect(() => {
@@ -82,7 +87,7 @@ const HomePage = () => {
         // Aggiungi i dati di `gevTransactionNumber`
         gevTransactionsNumber.forEach(({ date, gevTransactions = 0 }: TransactionSummary) => {
             if (!mergedTransactions[date]) {
-                mergedTransactions[date] = { date, gev: 0, ldt: 0 };
+                mergedTransactions[date] = { date, gev: 0, ldt: 0, lor: 0 };
             }
             mergedTransactions[date].gev = gevTransactions; // 🔹 Cambiato `gevTransaction` in `gev`
         });
@@ -90,14 +95,22 @@ const HomePage = () => {
         // Aggiungi i dati di `ldtTransactionNumber`
         ldtTransactionsNumber.forEach(({ date, ldtTransactions = 0 }: TransactionSummary) => {
             if (!mergedTransactions[date]) {
-                mergedTransactions[date] = { date, gev: 0, ldt: 0 };
+                mergedTransactions[date] = { date, gev: 0, ldt: 0, lor: 0 };
             }
             mergedTransactions[date].ldt = ldtTransactions; // 🔹 Cambiato `ldtTransaction` in `ldt`
         });
 
+        // Aggiungi i dati di `lorTransactionNumber`
+        lorTransactionsNumber.forEach(({ date, lorTransactions = 0 }: TransactionSummary) => {
+            if (!mergedTransactions[date]) {
+                mergedTransactions[date] = { date, gev: 0, ldt: 0, lor: 0 };
+            }
+            mergedTransactions[date].lor = lorTransactions; // 🔹 Cambiato `ldtTransaction` in `ldt`
+        });
+
         // Converti l'oggetto aggregato in un array
         setTransactionsNumber(Object.values(mergedTransactions));
-    }, [gevTransactionsNumber, ldtTransactionsNumber]);
+    }, [gevTransactionsNumber, ldtTransactionsNumber, lorTransactionsNumber]);
 
 
     console.log("test gevTransactionNumber", gevTransactionsNumber);
@@ -112,7 +125,7 @@ const HomePage = () => {
     const chartConfig2: Record<string, { label: string; color: string }> = {
         gev: { label: "Gev", color: "hsl(var(--chart-1))" },
         ldt: { label: "Ldt", color: "hsl(var(--chart-2))" },
-        lotto: { label: "Lotto", color: "hsl(var(--chart-3))" },
+        lor: { label: "Lotto", color: "hsl(var(--chart-3))" },
         virtual: { label: "Virtual", color: "hsl(var(--chart-4))" },
     };
 

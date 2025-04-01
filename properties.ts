@@ -25,7 +25,8 @@ export const properties = {
             transactions: "lor_transactions",
             registerKeys: "lor_registry_keys",
             contests: "lor_contests",
-            winningLists: "lor_winning_lists"
+            winningLists: "lor_winning_lists",
+            summary: "/summary"
         },
         act: {
             baseUrl: import.meta.env.VITE_CHATBOT_API_BASE_PATH

@@ -284,6 +284,60 @@ app.get("/ldt_transactions/summary", (req, res) => {
     }
 });
 
+// 📌 **Endpoint per ottenere il numero di transazioni giornaliere relativi alla data più recente**
+app.get("/lor_transactions/summary", (req, res) => {
+    const filePath = path.join(__dirname, "GRT-LOR/lor_transactions.json");
+
+    try {
+        // 1️⃣ Leggi il file JSON
+        const rawData = fs.readFileSync(filePath, "utf8");
+        const jsonData = JSON.parse(rawData);
+        const transactions = jsonData["transactions"] || [];
+
+        if (transactions.length === 0) {
+            return res.json([]);
+        }
+
+        // 2️⃣ Trova la data più recente tra tutte le transazioni
+        let latestDate = new Date(0); // Data iniziale molto vecchia
+        transactions.forEach((tx) => {
+            const txDate = parseISO(tx.wagerDate);
+            if (isAfter(txDate, latestDate)) {
+                latestDate = txDate;
+            }
+        });
+
+        // 3️⃣ Creiamo un oggetto per tenere traccia del conteggio giornaliero
+        const last30DaysCount = {};
+
+        // 4️⃣ Genera le date per gli ultimi 10 giorni basati sulla `latestDate`
+        for (let i = 0; i < 30; i++) {
+            const dateKey = format(subDays(latestDate, i), "yyyy-MM-dd");
+            last30DaysCount[dateKey] = 0; // Inizializza il conteggio a 0
+        }
+
+        // 5️⃣ Conta le transazioni per ogni giorno negli ultimi 30 giorni
+        transactions.forEach((tx) => {
+            const txDate = format(parseISO(tx.wagerDate), "yyyy-MM-dd");
+
+            if (txDate in last30DaysCount) {
+                last30DaysCount[txDate]++;
+            }
+        });
+
+        // 6️⃣ Converti l'oggetto in un array formattato
+        const result = Object.keys(last30DaysCount).map((date) => ({
+            date,
+            lorTransactions: last30DaysCount[date],
+        }));
+
+        res.json(result);
+    } catch (error) {
+        console.error("Errore nel caricamento delle transazioni:", error);
+        res.status(500).json({error: "Errore interno del server"});
+    }
+});
+
 // 📌 **GRT-LDT**
 app.post("/ldt_transactions", (req, res) => {
     const filters = req.body?.filters || {};
