@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
-import { Chart } from "@/components/Chart.tsx";
 import { CardsContainer } from "@/components/CardsContainer.tsx";
-import { TestChart } from "@/components/Grt/TestChart.tsx";
+import { TestChart } from "@/components/TestChart.tsx";
 import {gevTransactionSummary, lorTransactionSummary} from "@/services/gev_services.ts";
 import {ldtTransactionSummary} from "@/services/ldt_services.ts";
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx";
-import {actBonusColumns, sacsServiceOperationsColumns} from "@/components/GenericTableColumn.tsx";
+import {Card, CardContent, CardHeader} from "@/components/ui/card.tsx";
+import {sacsServiceOperationsColumns} from "@/components/GenericTableColumn.tsx";
 import {GenericTable} from "@/components/GenericTable.tsx";
-import {ActBonus, SacsServiceOperation} from "@/interfaces.ts";
-import {lorTransactions} from "@/services/lor_services.ts";
+import {SacsServiceOperation} from "@/interfaces.ts";
 
 // Definizione del tipo per gli elementi delle transazioni
 interface TransactionSummary {
     date: string;
     gevTransactions?: number;
     ldtTransactions?: number;
+    lorTransactions?: number;
 }
 
 interface ChartDataItem {
@@ -27,46 +26,46 @@ const HomePage = () => {
     const [ldtTransactionsNumber, setLdtTransactionsNumber] = useState<TransactionSummary[]>([]);
     const [lorTransactionsNumber, setLorTransactionsNumber] = useState<TransactionSummary[]>([]);
     const [transactionsNumber, setTransactionsNumber] = useState<ChartDataItem[]>([]);
-    const [sacsServiceOperations, setSacsServiceOperations] = useState<SacsServiceOperation[]>(
-        [
-            {
-                "CAUSAL": "20",
-                "N_OPERATIONS": 10
-            },
-            {
-                "CAUSAL": "21",
-                "N_OPERATIONS": 10
-            },
-            {
-                "CAUSAL": "22",
-                "N_OPERATIONS": 10
-            },
-            {
-                "CAUSAL": "23",
-                "N_OPERATIONS": 10
-            },
-            {
-                "CAUSAL": "24",
-                "N_OPERATIONS": 10
-            },
-            {
-                "CAUSAL": "25",
-                "N_OPERATIONS": 10
-            },
-            {
-                "CAUSAL": "26",
-                "N_OPERATIONS": 10
-            },
-            {
-                "CAUSAL": "27",
-                "N_OPERATIONS": 10
-            },
-            {
-                "CAUSAL": "28",
-                "N_OPERATIONS": 10
-            }
-        ]
-    )
+    const [sacsServiceOperations, setSacsServiceOperations] = useState<SacsServiceOperation[]>()
+
+    const sacsData =  [
+        {
+            "CAUSAL": "20",
+            "N_OPERATIONS": 10
+        },
+        {
+            "CAUSAL": "21",
+            "N_OPERATIONS": 10
+        },
+        {
+            "CAUSAL": "22",
+            "N_OPERATIONS": 10
+        },
+        {
+            "CAUSAL": "23",
+            "N_OPERATIONS": 10
+        },
+        {
+            "CAUSAL": "24",
+            "N_OPERATIONS": 10
+        },
+        {
+            "CAUSAL": "25",
+            "N_OPERATIONS": 10
+        },
+        {
+            "CAUSAL": "26",
+            "N_OPERATIONS": 10
+        },
+        {
+            "CAUSAL": "27",
+            "N_OPERATIONS": 10
+        },
+        {
+            "CAUSAL": "28",
+            "N_OPERATIONS": 10
+        }
+    ];
 
     useEffect(() => {
         gevTransactionSummary().then((response: TransactionSummary[]) => {
@@ -78,6 +77,7 @@ const HomePage = () => {
         lorTransactionSummary().then((response: TransactionSummary[]) => {
             setLorTransactionsNumber(response || []);
         });
+        setSacsServiceOperations(sacsData)
     }, []);
 
     useEffect(() => {
@@ -141,7 +141,7 @@ const HomePage = () => {
                 <Card className="w-1/2">
                     <CardHeader className="font-bold">Ultime Operazioni di Servizio</CardHeader>
                     <CardContent>
-                        <GenericTable data={sacsServiceOperations} columns={sacsServiceOperationsColumns}/>
+                        {sacsServiceOperations && <GenericTable data={sacsServiceOperations} columns={sacsServiceOperationsColumns}/>}
                     </CardContent>
                 </Card>
             </div>

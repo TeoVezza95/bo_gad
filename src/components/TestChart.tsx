@@ -5,12 +5,12 @@ import {
     CardDescription,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui/card.tsx";
 import {
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
-} from "@/components/ui/chart";
+} from "@/components/ui/chart.tsx";
 import { useMemo, useState } from "react";
 
 

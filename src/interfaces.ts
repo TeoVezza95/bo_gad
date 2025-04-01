@@ -67,7 +67,7 @@ export interface LorContest {
     closureDate: string
 }
 
-export interface LorWinning {
+export interface LorWinningList {
     communicationDate: string,
     contestCode: string,
     contestType: string,

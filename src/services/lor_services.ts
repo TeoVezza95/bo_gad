@@ -1,6 +1,6 @@
 import axios from "axios";
 import {properties} from "../../properties.ts";
-import {LorContest, LorRegistryKey, LorTransaction, LorWinning} from "@/interfaces.ts";
+import {LorContest, LorRegistryKey, LorTransaction, LorWinningList} from "@/interfaces.ts";
 import {formattedDate} from "@/lib/utils.ts";
 
 //LOR
@@ -52,13 +52,13 @@ const lorContests = async (filters: Record<string, unknown> = {}): Promise<LorCo
     throw Error(`Invalid response for ldt transaction request ${properties.rest.lor.contests}`);
 }
 
-const lorWinningLists = async (filters: Record<string, unknown> = {}): Promise<LorWinning[]> => {
+const lorWinningLists = async (filters: Record<string, unknown> = {}): Promise<LorWinningList[]> => {
 
     const response = await axios.post(`${properties.rest.lor.baseUrl}${properties.rest.lor.winningLists}`, {filters});
 
     if (response && response.data) {
         const winningLists = response.data.winningLists || response.data;
-        winningLists.forEach((winner: LorWinning) => {
+        winningLists.forEach((winner: LorWinningList) => {
             if (winner.communicationDate) {
                 winner.communicationDate = formattedDate(winner.communicationDate);
             }

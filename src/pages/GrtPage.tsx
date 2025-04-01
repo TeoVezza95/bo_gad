@@ -1,7 +1,7 @@
-import Gev from "@/components/Grt/Gev.tsx";
+import Gev from "@/components/Grt/Gev/Gev.tsx";
 import {useSearchParams} from "react-router-dom";
-import Ldt from "@/components/Grt/Ldt.tsx";
-import Lor from "@/components/Grt/Lor.tsx";
+import Ldt from "@/components/Grt/Ldt/Ldt.tsx";
+import Lor from "@/components/Grt/Lor/Lor.tsx";
 
 const GrtPage = () => {
     const [searchParams] = useSearchParams();

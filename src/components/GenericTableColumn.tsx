@@ -5,7 +5,7 @@ import {
     LdtContest,
     LdtRegistryKey,
     LdtTransaction, LorContest, LorRegistryKey,
-    LorTransaction, LorWinning, OnpTransaction, SacsServiceOperation,
+    LorTransaction, LorWinningList, OnpTransaction, SacsServiceOperation,
     TableColumn
 } from "@/interfaces.ts";
 import {Badge} from "@/components/ui/badge.tsx";
@@ -133,7 +133,7 @@ export const lorContestColumns: TableColumn<LorContest>[] = [
     {header: "Giocate Vincenti", accessor: "winningBets"},
     {header: "Processato", accessor: "processed",render: (value) => processedMapping[String(value)] || <Badge variant={"default"}>{value || "No Type"}</Badge>,},
 ];
-export const lorWinningListsColumns: TableColumn<LorWinning>[] = [
+export const LorWinningListColumns: TableColumn<LorWinningList>[] = [
     {header: "Tipologia", accessor: "contestType", render: (value) => typeMapping[String(value)] || <Badge variant={"default"}>{value || "No Type"}</Badge>,},
     {header: "Concorso", accessor: "contestCode"},
     // {header: "ID", accessor: "id"},
