@@ -1,0 +1,24 @@
+{
+  "id": 1472,
+  "contestType": "MILLIONDAY",
+  "contestCode": "20250328001",
+  "insertDate": "2025-03-28 13:02:59.000",
+  "winningBets": [
+    {
+      "transactionId": "M000000000000491",
+      "betId": "O0001098024",
+      "winningType": 0,
+      "grossImport": 435,
+      "netImport": 400,
+      "creditImport": 400
+    },
+    {
+      "transactionId": "M000000000000490",
+      "betId": "Z0001118103",
+      "winningType": 0,
+      "grossImport": 5435,
+      "netImport": 5000,
+      "creditImport": 5000
+    }
+  ]
+}
