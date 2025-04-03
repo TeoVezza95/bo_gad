@@ -97,7 +97,7 @@ export function AppSidebar() {
         // O rotta dinamica: navigate(`/${path}/${param}`)
         // Scegli in base a come hai definito le rotte
         if (param) {
-            navigate(`/${path}?param=${param}`)
+            navigate(`/${path}/${param}`)
         } else {
             navigate(`/${path}`)
         }

@@ -54,9 +54,9 @@ function App() {
                                </PrivateRoute>
                            }>
                         <Route index element={<HomePage/>}/>
-                        <Route path="/bo-gad/grt" element={<GrtPage/>}/>
-                        <Route path="/bo-gad/sacs" element={<SacsPage/>}/>
-                        <Route path="/bo-gad/act" element={<ActPage/>}/>
+                        <Route path="/bo-gad/grt/:param" element={<GrtPage/>}/>
+                        <Route path="/bo-gad/sacs/:param" element={<SacsPage/>}/>
+                        <Route path="/bo-gad/act/" element={<ActPage/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>

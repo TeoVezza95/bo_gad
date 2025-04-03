@@ -1,10 +1,10 @@
-import {useSearchParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 import AperturaGiuridica from "@/components/Sacs/AperturaGiuridica.tsx";
 
 const SacsPage = () => {
-    const [searchParams] = useSearchParams();
-    const param = searchParams.get("param");
+    const { param } = useParams<{ param: string }>();
+
 
     const componentsMap: { [key: string]: JSX.Element } = {
         aperGiur: <AperturaGiuridica/>,
@@ -21,9 +21,6 @@ const SacsPage = () => {
         <>
             <div className="size-full">GRT Page - Parametro: {param}</div>
             {renderedComponent}
-            {/*<div className="w-[50%] mx-auto">*/}
-            {/*    <Chart/>*/}
-            {/*</div>*/}
         </>
     )
 }

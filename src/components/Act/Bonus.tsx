@@ -4,6 +4,7 @@ import {GenericTable} from "@/components/GenericTable.tsx";
 import {actBonusColumns} from "@/components/GenericTableColumn.tsx";
 import {ActBonus, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
+import PaginationControls from "@/components/PaginatorControls.tsx";
 import {actBonus} from "@/services/act_services.ts";
 
 const bonusFilterSchema = z.object({
@@ -24,26 +25,34 @@ const bonusFilterFields: FilterField<z.infer<typeof bonusFilterSchema>>[] = [
 const Bonus = () => {
     const [bonus, setBonus] = useState<ActBonus[]>([]);
     const [bonusFilters, setBonusFilters] = useState<z.infer<typeof bonusFilterSchema>>({});
+    const [totalRecords, setTotalRecords] = useState(1);
+    const pageOptions = [10, 20, 30, 40, 50];
 
     useEffect(() => {
-        actBonus(bonusFilters)
-            .then((response: ActBonus[]) => {
-                setBonus(response);
+        handlePaginationChange(1, 10)
+    }, [bonusFilters])
+
+    // Questa funzione verrà invocata dal componente di paginazione
+    const handlePaginationChange = (currentPage: number, pageSize: number) => {
+        actBonus(bonusFilters, currentPage, pageSize)
+            .then((response: {
+                actBonus: ActBonus[];
+                pagination: { page: number; pageSize: number; total: number }
+            }) => {
+                setBonus(response.actBonus);
+                setTotalRecords(response.pagination.total);
             })
             .catch((error: unknown) => {
-                console.error("Error in actBonus:", error);
+                console.error("Error in bonuss:", error);
             });
-    }, [bonusFilters]);
+    };
 
-    // Funzione per filtrare i dati in base al tipo
+    // Funzione per applicare i filtri, che eventualmente resetta la paginazione (qui puoi anche resettare gli stati di PaginationControls se necessario)
     const handleFilter = (
-        type: "actBonus",
-        filters: Record<string, unknown> // Generalizzato per gestire entrambi gli schema
+        filters: Record<string, unknown>
     ) => {
-        console.log("Filtering data:", {type, filters});
-        if (type === "actBonus") {
-            setBonusFilters(filters as z.infer<typeof bonusFilterSchema>);
-        }
+        console.log("Filtering data bonus:", filters);
+        setBonusFilters(filters as z.infer<typeof bonusFilterSchema>);
     };
 
     return (
@@ -52,9 +61,14 @@ const Bonus = () => {
                 schema={bonusFilterSchema}
                 filters={bonusFilters}
                 filterFields={bonusFilterFields}
-                onFilter={(values) => handleFilter("actBonus", values)}
+                onFilter={(values) => handleFilter(values)}
             />
             <GenericTable data={bonus} columns={actBonusColumns}/>
+            <PaginationControls
+                pageOptions={pageOptions}
+                totalRecords={totalRecords}
+                onPaginationChange={handlePaginationChange}
+            />
         </>
     )
 }
