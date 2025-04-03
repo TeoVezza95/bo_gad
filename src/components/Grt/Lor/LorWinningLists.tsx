@@ -5,6 +5,7 @@ import {LorWinningListColumns} from "@/components/GenericTableColumn.tsx";
 import {LorWinningList, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {lorWinningLists} from "@/services/lor_services.ts";
+import PaginationControls from "@/components/PaginatorControls.tsx";
 
 // Schema per le transazioni
 const LorWinningListFilterSchema = z.object({
@@ -39,26 +40,34 @@ const LorWinningListFilterFields: FilterField<z.infer<typeof LorWinningListFilte
 const LorWinningLists = () => {
     const [winningLists, setWinningLists] = useState<LorWinningList[]>([]);
     const [winningListsFilters, setWinningListsFilters] = useState<z.infer<typeof LorWinningListFilterSchema>>({});
+    const [totalRecords, setTotalRecords] = useState(1);
+    const pageOptions = [10, 20, 30, 40, 50];
 
     useEffect(() => {
-        lorWinningLists(winningListsFilters)
-            .then((response: LorWinningList[]) => {
-                setWinningLists(response);
+        handlePaginationChange(1, 10)
+    }, [winningListsFilters])
+
+    // Questa funzione verrà invocata dal componente di paginazione
+    const handlePaginationChange = (currentPage: number, pageSize: number) => {
+        lorWinningLists(winningListsFilters, currentPage, pageSize)
+            .then((response: {
+                winningLists: LorWinningList[];
+                pagination: { page: number; pageSize: number; total: number }
+            }) => {
+                setWinningLists(response.winningLists);
+                setTotalRecords(response.pagination.total);
             })
             .catch((error: unknown) => {
-                console.error("Error in LorWinningList:", error);
+                console.error("Error in lorWinningLists:", error);
             });
-    }, [winningListsFilters]);
+    };
 
     // Funzione per filtrare i dati in base al tipo
     const handleFilter = (
-        type: "LorWinningList",
         filters: Record<string, unknown> // Generalizzato per gestire entrambi gli schema
     ) => {
-        console.log("Filtering data:", {type, filters});
-        if (type === "LorWinningList") {
-            setWinningListsFilters(filters as z.infer<typeof LorWinningListFilterSchema>);
-        }
+        console.log("Filtering data:", filters);
+        setWinningListsFilters(filters as z.infer<typeof LorWinningListFilterSchema>);
     };
 
     return (
@@ -67,9 +76,14 @@ const LorWinningLists = () => {
                 schema={LorWinningListFilterSchema}
                 filters={winningListsFilters}
                 filterFields={LorWinningListFilterFields}
-                onFilter={(values) => handleFilter("LorWinningList", values)}
+                onFilter={(values) => handleFilter(values)}
             />
             <GenericTable data={winningLists} columns={LorWinningListColumns}/>
+            <PaginationControls
+                pageOptions={pageOptions}
+                totalRecords={totalRecords}
+                onPaginationChange={handlePaginationChange}
+            />
         </>
     )
 }

@@ -5,6 +5,7 @@ import {gevRegistryKeyColumns} from "@/components/GenericTableColumn.tsx";
 import {GevRegistryKey, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {gevRegistryKeys} from "@/services/gev_services.ts";
+import PaginationControls from "@/components/PaginatorControls.tsx";
 
 // Schema per le registry keys
 const registryKeysFilterSchema = z.object({
@@ -26,26 +27,34 @@ const registryKeysFilterFields: FilterField<z.infer<typeof registryKeysFilterSch
 const GevRegistryKeys = () => {
     const [registryKeys, setRegistryKeys] = useState<GevRegistryKey[]>([]);
     const [registryKeysFilters, setRegistryKeysFilters] = useState<z.infer<typeof registryKeysFilterSchema>>({});
+    const [totalRecords, setTotalRecords] = useState(1);
+    const pageOptions = [10, 20, 30, 40, 50];
 
     useEffect(() => {
-        gevRegistryKeys(registryKeysFilters)
-            .then((response: GevRegistryKey[]) => {
-                setRegistryKeys(response);
+        handlePaginationChange(1, 10)
+    }, [registryKeysFilters])
+
+    // Questa funzione verrà invocata dal componente di paginazione
+    const handlePaginationChange = (currentPage: number, pageSize: number) => {
+        gevRegistryKeys(registryKeysFilters, currentPage, pageSize)
+            .then((response: {
+                registrationKeys: GevRegistryKey[];
+                pagination: { page: number; pageSize: number; total: number }
+            }) => {
+                setRegistryKeys(response.registrationKeys);
+                setTotalRecords(response.pagination.total);
             })
             .catch((error: unknown) => {
-                console.error("Error in registryKeys:", error);
+                console.error("Error in gevTransactions:", error);
             });
-    }, [registryKeysFilters]);
+    };
 
     // Funzione per filtrare i dati in base al tipo
     const handleFilter = (
-        type: "registryKeys",
         filters: Record<string, unknown> // Generalizzato per gestire entrambi gli schema
     ) => {
-        console.log("Filtering data:", {type, filters});
-        if (type === "registryKeys") {
+        console.log("Filtering data registryKeys:", filters);
             setRegistryKeysFilters(filters as z.infer<typeof registryKeysFilterSchema>);
-        }
     };
 
     return (
@@ -54,9 +63,14 @@ const GevRegistryKeys = () => {
                 schema={registryKeysFilterSchema}
                 filters={registryKeysFilters}
                 filterFields={registryKeysFilterFields}
-                onFilter={(values) => handleFilter("registryKeys", values)}
+                onFilter={(values) => handleFilter(values)}
             />
             <GenericTable data={registryKeys} columns={gevRegistryKeyColumns}/>
+            <PaginationControls
+                pageOptions={pageOptions}
+                totalRecords={totalRecords}
+                onPaginationChange={handlePaginationChange}
+            />
         </>
     )
 }

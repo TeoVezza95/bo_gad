@@ -1,4 +1,4 @@
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+import {Bar, BarChart, CartesianGrid, XAxis} from "recharts";
 import {
     Card,
     CardContent,
@@ -11,21 +11,23 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart.tsx";
-import { useMemo, useState } from "react";
+import {useMemo, useState} from "react";
 
 
 interface ChartDataItem {
     date: string;
+
     [key: string]: string | number; // 🔹 Permette altre chiavi dinamiche
 }
 
 interface ChartProps {
     data: ChartDataItem[];
+    className?: string;
     config: Record<string, { label: string; color: string }>;
 }
 
 
-export function TestChart({ data, config }: ChartProps): JSX.Element {
+export function TestChart({data, config, className}: ChartProps): JSX.Element {
     const [activeChart, setActiveChart] = useState<keyof typeof config>("gev");
 
     const total = useMemo(() => {
@@ -36,7 +38,7 @@ export function TestChart({ data, config }: ChartProps): JSX.Element {
     }, [data, config]);
 
     return (
-        <Card>
+        <Card className={className}>
             <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
                 <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
                     <CardTitle>Ultime transazioni</CardTitle>
@@ -73,9 +75,9 @@ export function TestChart({ data, config }: ChartProps): JSX.Element {
                     <BarChart
                         accessibilityLayer
                         data={data}
-                        margin={{ left: 12, right: 12 }}
+                        margin={{left: 12, right: 12}}
                     >
-                        <CartesianGrid vertical={false} />
+                        <CartesianGrid vertical={false}/>
                         <XAxis
                             dataKey="date"
                             tickLine={false}

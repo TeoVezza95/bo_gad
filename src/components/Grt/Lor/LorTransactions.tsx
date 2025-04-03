@@ -5,6 +5,7 @@ import {lorTransactionColumns} from "@/components/GenericTableColumn.tsx";
 import {LorTransaction, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {lorTransactions} from "@/services/lor_services.ts";
+import PaginationControls from "@/components/PaginatorControls.tsx";
 
 // Schema per le transazioni
 const lorTransactionFilterSchema = z.object({
@@ -32,37 +33,49 @@ const lorTransactionFilterFields: FilterField<z.infer<typeof lorTransactionFilte
 const LorTransactions = () => {
     const [lorTransaction, setLorTransaction] = useState<LorTransaction[]>([]);
     const [lorTransactionFilters, setLorTransactionFilters] = useState<z.infer<typeof lorTransactionFilterSchema>>({});
+    const [totalRecords, setTotalRecords] = useState(1);
+    const pageOptions = [10, 20, 30, 40, 50];
 
     useEffect(() => {
-        lorTransactions(lorTransactionFilters)
-            .then((response: LorTransaction[]) => {
-                setLorTransaction(response);
+        handlePaginationChange(1, 10)
+    }, [lorTransactionFilters])
+
+    // Questa funzione verrà invocata dal componente di paginazione
+    const handlePaginationChange = (currentPage: number, pageSize: number) => {
+        lorTransactions(lorTransactionFilters, currentPage, pageSize)
+            .then((response: {
+                transactions: LorTransaction[];
+                pagination: { page: number; pageSize: number; total: number }
+            }) => {
+                setLorTransaction(response.transactions);
+                setTotalRecords(response.pagination.total);
             })
             .catch((error: unknown) => {
                 console.error("Error in lorTransactions:", error);
             });
-    }, [lorTransactionFilters]);
+    };
 
     // Funzione per filtrare i dati in base al tipo
     const handleFilter = (
-        type: "lorTransactions",
         filters: Record<string, unknown> // Generalizzato per gestire entrambi gli schema
     ) => {
-        console.log("Filtering data:", {type, filters});
-        if (type === "lorTransactions") {
-            setLorTransactionFilters(filters as z.infer<typeof lorTransactionFilterSchema>);
-        }
+        console.log("Filtering data lorTransactions:", {filters});
+        setLorTransactionFilters(filters as z.infer<typeof lorTransactionFilterSchema>);
     };
-
     return (
         <>
             <GenericFilters<z.infer<typeof lorTransactionFilterSchema>>
                 schema={lorTransactionFilterSchema}
                 filters={lorTransactionFilters}
                 filterFields={lorTransactionFilterFields}
-                onFilter={(values) => handleFilter("lorTransactions", values)}
+                onFilter={(values) => handleFilter(values)}
             />
             <GenericTable data={lorTransaction} columns={lorTransactionColumns}/>
+            <PaginationControls
+                pageOptions={pageOptions}
+                totalRecords={totalRecords}
+                onPaginationChange={handlePaginationChange}
+            />
         </>
     )
 }

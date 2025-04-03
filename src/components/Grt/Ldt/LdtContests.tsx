@@ -5,6 +5,7 @@ import {ldtContestColumns} from "@/components/GenericTableColumn.tsx";
 import {LdtContest, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {ldtContests} from "@/services/ldt_services.ts";
+import PaginationControls from "@/components/PaginatorControls.tsx";
 
 // Schema per le transazioni
 const ldtContestFilterSchema = z.object({
@@ -40,26 +41,34 @@ const ldtContestFilterFields: FilterField<z.infer<typeof ldtContestFilterSchema>
 const LdtContests = () => {
     const [ldtContest, setLdtContest] = useState<LdtContest[]>([]);
     const [ldtContestFilters, setLdtContestFilters] = useState<z.infer<typeof ldtContestFilterSchema>>({});
+    const [totalRecords, setTotalRecords] = useState(1);
+    const pageOptions = [10, 20, 30, 40, 50];
 
     useEffect(() => {
-        ldtContests(ldtContestFilters)
-            .then((response: LdtContest[]) => {
-                setLdtContest(response);
+        handlePaginationChange(1, 10)
+    }, [ldtContestFilters])
+
+    // Questa funzione verrà invocata dal componente di paginazione
+    const handlePaginationChange = (currentPage: number, pageSize: number) => {
+        ldtContests(ldtContestFilters, currentPage, pageSize)
+            .then((response: {
+                contests: LdtContest[];
+                pagination: { page: number; pageSize: number; total: number }
+            }) => {
+                setLdtContest(response.contests);
+                setTotalRecords(response.pagination.total);
             })
             .catch((error: unknown) => {
-                console.error("Error in ldtContests:", error);
+                console.error("Error in ldtTransactions:", error);
             });
-    }, [ldtContestFilters]);
+    };
 
     // Funzione per filtrare i dati in base al tipo
     const handleFilter = (
-        type: "ldtContests",
         filters: Record<string, unknown> // Generalizzato per gestire entrambi gli schema
     ) => {
-        console.log("Filtering data:", {type, filters});
-        if (type === "ldtContests") {
-            setLdtContestFilters(filters as z.infer<typeof ldtContestFilterSchema>);
-        }
+        console.log("Filtering data ldtContests:", filters);
+        setLdtContestFilters(filters as z.infer<typeof ldtContestFilterSchema>);
     };
 
     return (
@@ -68,9 +77,14 @@ const LdtContests = () => {
                 schema={ldtContestFilterSchema}
                 filters={ldtContestFilters}
                 filterFields={ldtContestFilterFields}
-                onFilter={(values) => handleFilter("ldtContests", values)}
+                onFilter={(values) => handleFilter(values)}
             />
             <GenericTable data={ldtContest} columns={ldtContestColumns}/>
+            <PaginationControls
+                pageOptions={pageOptions}
+                totalRecords={totalRecords}
+                onPaginationChange={handlePaginationChange}
+            />
         </>
     )
 }

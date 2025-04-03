@@ -153,4 +153,10 @@ export interface FilterField<T> {
     options?: { label: string; value: string }[]; // usato se type === "select"
 }
 
+export interface Pagination {
+    page: number;
+    pageSize: number;
+    total: number;
+}
+
 

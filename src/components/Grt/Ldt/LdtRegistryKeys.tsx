@@ -4,6 +4,7 @@ import {GenericTable} from "@/components/GenericTable.tsx";
 import {ldtRegistryKeyColumns} from "@/components/GenericTableColumn.tsx";
 import {LdtRegistryKey, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
+import PaginationControls from "@/components/PaginatorControls.tsx";
 import {ldtRegistryKeys} from "@/services/ldt_services.ts";
 
 // Schema per le registry keys
@@ -26,26 +27,34 @@ const registryKeysFilterFields: FilterField<z.infer<typeof registryKeysFilterSch
 const LdtRegistryKeys = () => {
     const [registryKeys, setRegistryKeys] = useState<LdtRegistryKey[]>([]);
     const [registryKeysFilters, setRegistryKeysFilters] = useState<z.infer<typeof registryKeysFilterSchema>>({});
+    const [totalRecords, setTotalRecords] = useState(1);
+    const pageOptions = [10, 20, 30, 40, 50];
 
     useEffect(() => {
-        ldtRegistryKeys(registryKeysFilters)
-            .then((response: LdtRegistryKey[]) => {
-                setRegistryKeys(response);
+        handlePaginationChange(1, 10)
+    }, [registryKeysFilters])
+    
+    // Questa funzione verrà invocata dal componente di paginazione
+    const handlePaginationChange = (currentPage: number, pageSize: number) => {
+        ldtRegistryKeys(registryKeysFilters, currentPage, pageSize)
+            .then((response: {
+                registrationKeys: LdtRegistryKey[];
+                pagination: { page: number; pageSize: number; total: number }
+            }) => {
+                setRegistryKeys(response.registrationKeys);
+                setTotalRecords(response.pagination.total);
             })
             .catch((error: unknown) => {
-                console.error("Error in registryKeys:", error);
+                console.error("Error in ldtTransactions:", error);
             });
-    }, [registryKeysFilters]);
+    };
 
     // Funzione per filtrare i dati in base al tipo
     const handleFilter = (
-        type: "registryKeys",
         filters: Record<string, unknown> // Generalizzato per gestire entrambi gli schema
     ) => {
-        console.log("Filtering data:", {type, filters});
-        if (type === "registryKeys") {
-            setRegistryKeysFilters(filters as z.infer<typeof registryKeysFilterSchema>);
-        }
+        console.log("Filtering data registryKeys:", filters);
+        setRegistryKeysFilters(filters as z.infer<typeof registryKeysFilterSchema>);
     };
 
     return (
@@ -54,9 +63,14 @@ const LdtRegistryKeys = () => {
                 schema={registryKeysFilterSchema}
                 filters={registryKeysFilters}
                 filterFields={registryKeysFilterFields}
-                onFilter={(values) => handleFilter("registryKeys", values)}
+                onFilter={(values) => handleFilter(values)}
             />
             <GenericTable data={registryKeys} columns={ldtRegistryKeyColumns}/>
+            <PaginationControls
+                pageOptions={pageOptions}
+                totalRecords={totalRecords}
+                onPaginationChange={handlePaginationChange}
+            />
         </>
     )
 }

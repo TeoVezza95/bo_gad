@@ -7,7 +7,7 @@ export default function Layout() {
     return (
         <SidebarProvider>
             <AppSidebar />
-            <main className="w-full">
+            <main className="w-full h-full">
                 <SidebarInset>
                     <header className="flex h-16 shrink-0 items-center gap-2">
                         <div className="flex items-center gap-2 px-4">
@@ -16,7 +16,7 @@ export default function Layout() {
                             {/* Altri elementi comuni, ad esempio breadcrumb */}
                         </div>
                     </header>
-                    <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+                    <div className="flex flex-1 flex-col gap-4 p-4 pt-0 size-full">
                         {/* Qui va l'Outlet, che inietterà la pagina specifica in base alla rotta */}
                         <Outlet />
                     </div>

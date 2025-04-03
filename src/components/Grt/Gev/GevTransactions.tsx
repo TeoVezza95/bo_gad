@@ -5,6 +5,7 @@ import {gevTransactionColumns} from "@/components/GenericTableColumn.tsx";
 import {GevTransaction, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {gevTransactions} from "@/services/gev_services.ts";
+import PaginationControls from "@/components/PaginatorControls.tsx";
 
 // Schema per le transazioni
 const gevTransactionFilterSchema = z.object({
@@ -39,26 +40,34 @@ const gevTransactionFilterFields: FilterField<z.infer<typeof gevTransactionFilte
 const GevTransactions = () => {
     const [gevTransaction, setGevTransaction] = useState<GevTransaction[]>([]);
     const [gevTransactionFilters, setGevTransactionFilters] = useState<z.infer<typeof gevTransactionFilterSchema>>({});
+    const [totalRecords, setTotalRecords] = useState(1);
+    const pageOptions = [10, 20, 30, 40, 50];
 
     useEffect(() => {
-        gevTransactions(gevTransactionFilters)
-            .then((response: GevTransaction[]) => {
-                setGevTransaction(response);
+        handlePaginationChange(1, 10)
+    }, [gevTransactionFilters])
+
+    // Questa funzione verrà invocata dal componente di paginazione
+    const handlePaginationChange = (currentPage: number, pageSize: number) => {
+        gevTransactions(gevTransactionFilters, currentPage, pageSize)
+            .then((response: {
+                transactions: GevTransaction[];
+                pagination: { page: number; pageSize: number; total: number }
+            }) => {
+                setGevTransaction(response.transactions);
+                setTotalRecords(response.pagination.total);
             })
             .catch((error: unknown) => {
                 console.error("Error in gevTransactions:", error);
             });
-    }, [gevTransactionFilters]);
+    };
 
-    // Funzione per filtrare i dati in base al tipo
+    // Funzione per applicare i filtri, che eventualmente resetta la paginazione (qui puoi anche resettare gli stati di PaginationControls se necessario)
     const handleFilter = (
-        type: "gevTransactions",
-        filters: Record<string, unknown> // Generalizzato per gestire entrambi gli schema
+        filters: Record<string, unknown>
     ) => {
-        console.log("Filtering data:", {type, filters});
-        if (type === "gevTransactions") {
-            setGevTransactionFilters(filters as z.infer<typeof gevTransactionFilterSchema>);
-        }
+        console.log("Filtering data gevTransactions:", filters);
+        setGevTransactionFilters(filters as z.infer<typeof gevTransactionFilterSchema>);
     };
 
     return (
@@ -67,9 +76,14 @@ const GevTransactions = () => {
                 schema={gevTransactionFilterSchema}
                 filters={gevTransactionFilters}
                 filterFields={gevTransactionFilterFields}
-                onFilter={(values) => handleFilter("gevTransactions", values)}
+                onFilter={(values) => handleFilter(values)}
             />
             <GenericTable data={gevTransaction} columns={gevTransactionColumns}/>
+            <PaginationControls
+                pageOptions={pageOptions}
+                totalRecords={totalRecords}
+                onPaginationChange={handlePaginationChange}
+            />
         </>
     )
 }

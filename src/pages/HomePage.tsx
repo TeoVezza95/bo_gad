@@ -130,22 +130,21 @@ const HomePage = () => {
     };
 
     return (
-        <>
-
-            <div className="size-full">HOMEPAGE</div>
+            <div>
+                HOMEPAGE
             <CardsContainer items={data}/>
-            <div className="flex gap-2">
-                <div className="">
-                    {transactionsNumber.length > 0 && <TestChart data={transactionsNumber} config={chartConfig2}/>}
+            <div className="flex gap-4 my-8 w-full h-full justify-center">
+                <div className="w-1/3">
+                    {transactionsNumber.length > 0 && <TestChart data={transactionsNumber} config={chartConfig2} className={"h-full"}/>}
                 </div>
-                <Card className="w-1/2">
+                <Card className="w-1/3">
                     <CardHeader className="font-bold">Ultime Operazioni di Servizio</CardHeader>
                     <CardContent>
                         {sacsServiceOperations && <GenericTable data={sacsServiceOperations} columns={sacsServiceOperationsColumns}/>}
                     </CardContent>
                 </Card>
             </div>
-        </>
+            </div>
     );
 };
 
