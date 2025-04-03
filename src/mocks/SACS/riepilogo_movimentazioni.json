@@ -1,0 +1,44 @@
+{
+  "movements": [
+    {
+      "causal": 1,
+      "operationNumber": 10,
+      "amount": 10000
+    },
+    {
+      "causal": 2,
+      "operationNumber": 20,
+      "amount": -10000
+    },
+    {
+      "causal": 3,
+      "operationNumber": 30,
+      "amount": 0
+    },
+    {
+      "causal": 4,
+      "operationNumber": 40,
+      "amount": 0
+    },
+    {
+      "causal": 5,
+      "operationNumber": 50,
+      "amount": 0
+    },
+    {
+      "causal": 6,
+      "operationNumber": 60,
+      "amount": 0
+    },
+    {
+      "causal": 7,
+      "operationNumber": 70,
+      "amount": 0
+    },
+    {
+      "causal": 8,
+      "operationNumber": 80,
+      "amount": 0
+    }
+  ]
+}

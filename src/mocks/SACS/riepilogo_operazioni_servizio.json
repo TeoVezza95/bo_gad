@@ -1,0 +1,40 @@
+{
+  "serviceOperations": [
+    {
+      "causal": 20,
+      "numeroOperazioni": 1
+    },
+    {
+      "causal": 21,
+      "numeroOperazioni": 2
+    },
+    {
+      "causal": 22,
+      "numeroOperazioni": 3
+    },
+    {
+      "causal": 23,
+      "numeroOperazioni": 4
+    },
+    {
+      "causal": 24,
+      "numeroOperazioni": 5
+    },
+    {
+      "causal": 25,
+      "numeroOperazioni": 6
+    },
+    {
+      "causal": 26,
+      "numeroOperazioni": 7
+    },
+    {
+      "causal": 27,
+      "numeroOperazioni": 8
+    },
+    {
+      "causal": 28,
+      "numeroOperazioni": 8
+    }
+  ]
+}
