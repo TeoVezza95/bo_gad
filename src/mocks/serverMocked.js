@@ -245,6 +245,17 @@ app.post("/lor_winning_lists", (req, res) => {
     res.json(paginate(allData, page, pageSize));
 });
 
+// Endpoint con paginazione per GRT-VIRTUAL
+app.post("/virtual_transactions", (req, res) => {
+    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const allData = loadAndFilterData(
+        path.join(__dirname, "GRT-VIRTUAL/virtual_transactions.json"),
+        "transactions",
+        filters
+    );
+    res.json(paginate(allData, page, pageSize));
+});
+
 // ACT endpoints
 app.post("/ewl_transactions", (req, res) => {
     const { filters = {}, page = 1, pageSize = 10 } = req.body;

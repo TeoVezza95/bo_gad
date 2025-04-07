@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import Gev from "@/components/Grt/Gev/Gev.tsx";
 import Ldt from "@/components/Grt/Ldt/Ldt.tsx";
 import Lor from "@/components/Grt/Lor/Lor.tsx";
+import Virtual from "@/components/Grt/Virtual/Virtual.tsx";
 
 const GrtPage = () => {
     const { param } = useParams<{ param: string }>();
@@ -10,6 +11,7 @@ const GrtPage = () => {
         gev: <Gev />,
         ldt: <Ldt />,
         lotto: <Lor />,
+        virtual: <Virtual />,
     };
 
     const renderedComponent =

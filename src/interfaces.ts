@@ -76,6 +76,17 @@ export interface LorWinningList {
     processed: number
 }
 
+//VIRTUAL
+export interface VirtualTransaction {
+    id: string,
+    ticketId: string,
+    contractId: string,
+    amount: number,
+    transactionDate: string,
+    status: number,
+}
+
+//ACT
 export interface EwlTransaction {
     TRANSACTION_ID: number,
     OPERATION_ID: number,

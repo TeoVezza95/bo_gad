@@ -6,7 +6,7 @@ import {
     LdtRegistryKey,
     LdtTransaction, LorContest, LorRegistryKey,
     LorTransaction, LorWinningList, OnpTransaction, SacsServiceOperation,
-    TableColumn
+    TableColumn, VirtualTransaction
 } from "@/interfaces.ts";
 import {Badge} from "@/components/ui/badge.tsx";
 
@@ -15,6 +15,14 @@ export const statusMapping: { [key: string]: JSX.Element } = {
     "1": <Badge variant="warning">Prenotata</Badge>,
     "2": <Badge variant="success">Completata</Badge>,
     "3": <Badge variant="destructive">Annullata</Badge>,
+};
+
+export const virtualStatusMapping: { [key: string]: JSX.Element } = {
+    "0": <Badge variant="default">Pending</Badge>,
+    "3": <Badge variant="success">Pagato</Badge>,
+    "4": <Badge variant="orange">Rimborsato</Badge>,
+    "5": <Badge variant="water">Pagato/Rimborsato</Badge>,
+    "50": <Badge variant="destructive">Perdente</Badge>,
 };
 
 export const channelMapping: { [key: string]: JSX.Element } = {
@@ -68,6 +76,7 @@ export const sacsServiceOperationsMapping: { [key: string]: JSX.Element } = {
     "40": <b>Aggiorna Posta Elettronica Conto</b>,
 };
 
+//GEV
 export const gevTransactionColumns: TableColumn<GevTransaction>[] = [
     {header: "Transazione", accessor: "id"},
     {header: "Conto Gioco", accessor: "contractid"},
@@ -142,6 +151,17 @@ export const LorWinningListColumns: TableColumn<LorWinningList>[] = [
     {header: "Notificata", accessor: "notified",  render: (value) => notificationMapping[String(value)] || <Badge variant={"default"}>{value}</Badge>,},
 ];
 
+//VIRTUAL
+export const virtualTransactionColumns: TableColumn<VirtualTransaction>[] = [
+    {header: "Transazione", accessor: "id"},
+    {header: "Conto Gioco", accessor: "contractId"},
+    {header: "Ticket ID", accessor: "ticketId"},
+    {header: "Data Transazione", accessor: "transactionDate"},
+    {header: "Stato", accessor: "status", render: (value) => virtualStatusMapping[String(value)] || <Badge variant={"default"}>{value}</Badge>},
+    {header: "Importo", accessor: "amount", render: (value) => <Badge variant={"gadBlue"}>€ {value}</Badge>},
+];
+
+//ACT
 export const actBonusColumns: TableColumn<ActBonus>[] = [
     {header: "ID", accessor: "ID"},
     {header: "Importo", accessor: "USER_CURRENCY_AMOUNT"},
@@ -149,11 +169,6 @@ export const actBonusColumns: TableColumn<ActBonus>[] = [
     {header: "Data transazione", accessor: "TRANSACTION_DATE"},
     {header: "Operazione", accessor: "OPERATION_ID"},
     {header: "Calling client ID", accessor: "CALLING_CLIENT_ID"},
-    // {header: "Calling system ID", accessor: "CALLING_SYSTEM_ID"},
-    // {header: "ID Brand", accessor: "BRAND_ID"},
-    // {header: "ID Partner", accessor: "PARTNER_ID"},
-    // {header: "Data Creazione KPI", accessor: "KPI_CREATION_DATE"},
-    // {header: "Data Update KPI", accessor: "KPI_UPDATE_DATE"},
 ];
 
 export const actStorniColumns: TableColumn<ActStorni>[] = [
@@ -163,11 +178,6 @@ export const actStorniColumns: TableColumn<ActStorni>[] = [
     {header: "Data transazione", accessor: "TRANSACTION_DATE"},
     {header: "Operazione", accessor: "OPERATION_ID"},
     {header: "Calling client ID", accessor: "CALLING_CLIENT_ID"},
-    // {header: "Calling system ID", accessor: "CALLING_SYSTEM_ID"},
-    // {header: "ID Brand", accessor: "BRAND_ID"},
-    // {header: "ID Partner", accessor: "PARTNER_ID"},
-    // {header: "Data Creazione KPI", accessor: "KPI_CREATION_DATE"},
-    // {header: "Data Update KPI", accessor: "KPI_UPDATE_DATE"},
 ];
 
 export const onpColumns: TableColumn<OnpTransaction>[] = [

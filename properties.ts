@@ -28,6 +28,12 @@ export const properties = {
             winningLists: "lor_winning_lists",
             summary: "/summary"
         },
+        virtual: {
+            baseUrl: import.meta.env.VITE_BO_GAD_API_BASE_PATH
+                ? import.meta.env.VITE_BO_GAD_API_BASE_PATH
+                : import.meta.env.VITE_MOCK_BASE_PATH,
+            transactions: "virtual_transactions",
+        },
         act: {
             baseUrl: import.meta.env.VITE_CHATBOT_API_BASE_PATH
                 ? import.meta.env.VITE_BO_GAD_API_BASE_PATH
