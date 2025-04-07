@@ -27,6 +27,9 @@ export const gevTransactions = async (
             if (transaction.endDate) {
                 transaction.endDate = formattedDate(transaction.endDate);
             }
+            if (transaction.amount) {
+                transaction.amount = (transaction.amount / 100);
+            }
         });
         const pagination = {page: response.data.page, pageSize: response.data.pageSize, total: response.data.total}
         return {transactions, pagination};

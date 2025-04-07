@@ -1,7 +1,7 @@
 import {GenericFilters} from "@/components/GenericFilters.tsx";
 import {z} from "zod";
 import {GenericTable} from "@/components/GenericTable.tsx";
-import {LorWinningListColumns} from "@/components/GenericTableColumn.tsx";
+import {LorWinningListColumns, typeMapping} from "@/components/GenericTableColumn.tsx";
 import {LorWinningList, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {lorWinningLists} from "@/services/lor_services.ts";
@@ -75,6 +75,7 @@ const LorWinningLists = () => {
             <GenericFilters<z.infer<typeof LorWinningListFilterSchema>>
                 schema={LorWinningListFilterSchema}
                 filters={winningListsFilters}
+                mapping={typeMapping}
                 filterFields={LorWinningListFilterFields}
                 onFilter={(values) => handleFilter(values)}
             />

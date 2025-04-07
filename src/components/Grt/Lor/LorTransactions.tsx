@@ -1,7 +1,7 @@
 import {GenericFilters} from "@/components/GenericFilters.tsx";
 import {z} from "zod";
 import {GenericTable} from "@/components/GenericTable.tsx";
-import {lorTransactionColumns} from "@/components/GenericTableColumn.tsx";
+import {lorTransactionColumns, typeMapping} from "@/components/GenericTableColumn.tsx";
 import {LorTransaction, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {lorTransactions} from "@/services/lor_services.ts";
@@ -26,7 +26,15 @@ const lorTransactionFilterFields: FilterField<z.infer<typeof lorTransactionFilte
     {field: "id", label: "Transazione", type: "text"},
     {field: "contractid", label: "Conto Gioco", type: "text"},
     {field: "contestCode", label: "Concorso", type: "text"},
-    {field: "contestType", label: "Tipologia", type: "text"},
+    {
+        field: "contestType", label: "Tipologia", type: "select", options: [
+            {label: "10ELOTTO IMMEDIATA", value: "10ELOTTO IMMEDIATA"},
+            {label: "10ELOTTO FREQUENTE", value: "10ELOTTO FREQUENTE"},
+            {label: "10ELOTTO LOTTO", value: "10ELOTTO LOTTO"},
+            {label: "LOTTO", value: "LOTTO"},
+            {label: "MILLIONDAY", value: "MILLIONDAY"}
+        ]
+    },
     {field: "DATE_RANGE", label: "Data", type: "daterange"},
 ];
 
@@ -66,6 +74,7 @@ const LorTransactions = () => {
         <>
             <GenericFilters<z.infer<typeof lorTransactionFilterSchema>>
                 schema={lorTransactionFilterSchema}
+                mapping={typeMapping}
                 filters={lorTransactionFilters}
                 filterFields={lorTransactionFilterFields}
                 onFilter={(values) => handleFilter(values)}

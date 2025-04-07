@@ -1,7 +1,7 @@
 import {GenericFilters} from "@/components/GenericFilters.tsx";
 import {z} from "zod";
 import {GenericTable} from "@/components/GenericTable.tsx";
-import {gevTransactionColumns} from "@/components/GenericTableColumn.tsx";
+import {gevTransactionColumns, statusMapping} from "@/components/GenericTableColumn.tsx";
 import {GevTransaction, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {gevTransactions} from "@/services/gev_services.ts";
@@ -75,6 +75,7 @@ const GevTransactions = () => {
             <GenericFilters<z.infer<typeof gevTransactionFilterSchema>>
                 schema={gevTransactionFilterSchema}
                 filters={gevTransactionFilters}
+                mapping={statusMapping}
                 filterFields={gevTransactionFilterFields}
                 onFilter={(values) => handleFilter(values)}
             />

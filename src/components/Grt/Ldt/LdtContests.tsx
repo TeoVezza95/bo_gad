@@ -1,7 +1,7 @@
 import {GenericFilters} from "@/components/GenericFilters.tsx";
 import {z} from "zod";
 import {GenericTable} from "@/components/GenericTable.tsx";
-import {ldtContestColumns} from "@/components/GenericTableColumn.tsx";
+import {channelMapping, ldtContestColumns, statusContestMapping} from "@/components/GenericTableColumn.tsx";
 import {LdtContest, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {ldtContests} from "@/services/ldt_services.ts";
@@ -24,7 +24,15 @@ const ldtContestFilterSchema = z.object({
 // Definizione dei campi filtro per le transazioni
 const ldtContestFilterFields: FilterField<z.infer<typeof ldtContestFilterSchema>>[] = [
     {field: "gameId", label: "ID", type: "text"},
-    {field: "gameChannel", label: "Canale", type: "text"},
+    {
+        field: "gameChannel",
+        label: "Canale",
+        type: "select",
+        options: [
+            {label: "WEB", value: "1"},
+            {label: "MOB", value: "2"}
+        ]
+    },
     {
         field: "status",
         label: "Stato",
@@ -75,6 +83,7 @@ const LdtContests = () => {
         <>
             <GenericFilters<z.infer<typeof ldtContestFilterSchema>>
                 schema={ldtContestFilterSchema}
+                mapping={{status: statusContestMapping, gameChannel: channelMapping}}
                 filters={ldtContestFilters}
                 filterFields={ldtContestFilterFields}
                 onFilter={(values) => handleFilter(values)}

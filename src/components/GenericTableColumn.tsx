@@ -11,24 +11,24 @@ import {
 import {Badge} from "@/components/ui/badge.tsx";
 
 
-const statusMapping: { [key: string]: JSX.Element } = {
+export const statusMapping: { [key: string]: JSX.Element } = {
     "1": <Badge variant="warning">Prenotata</Badge>,
     "2": <Badge variant="success">Completata</Badge>,
     "3": <Badge variant="destructive">Annullata</Badge>,
 };
 
-const channelMapping: { [key: string]: JSX.Element } = {
+export const channelMapping: { [key: string]: JSX.Element } = {
     "1": <Badge variant="secondary">WEB</Badge>,
     "2": <Badge variant="gadBlue">MOB</Badge>,
 }
 
-const statusContestMapping: { [key: string]: JSX.Element } = {
+export const statusContestMapping: { [key: string]: JSX.Element } = {
     "A": <Badge variant="success">Aperto</Badge>,
     "C": <Badge variant="destructive">Chiuso</Badge>,
     "S": <Badge variant="warning">Sospeso</Badge>,
 }
 
-const typeMapping: { [key: string]: JSX.Element } = {
+export const typeMapping: { [key: string]: JSX.Element } = {
     "10ELOTTO IMMEDIATA": <div><Badge variant="gadBlue">10ELOTTO</Badge><Badge variant="secondaryGadBlue">IMMEDIATA</Badge></div>,
     "10ELOTTO FREQUENTE": <div><Badge variant="gadBlue">10ELOTTO</Badge><Badge variant="secondaryOrange">FREQUENTE</Badge></div>,
     "10ELOTTO LOTTO": <div><Badge variant="gadBlue">10ELOTTO</Badge><Badge variant="orange">LOTTO</Badge></div>,
@@ -36,19 +36,19 @@ const typeMapping: { [key: string]: JSX.Element } = {
     "MILLIONDAY": <Badge variant="water">MILLIONDAY</Badge>,
 }
 
-const notificationMapping: { [key: string]: JSX.Element } = {
+export const notificationMapping: { [key: string]: JSX.Element } = {
     "1": <Badge variant="success">Notificata</Badge>,
     "0": <Badge variant="warning">Da Notificare</Badge>,
     "-1": <Badge variant="destructive">Errore</Badge>,
 };
 
-const processedMapping: { [key: string]: JSX.Element } = {
+export const processedMapping: { [key: string]: JSX.Element } = {
     "1": <Badge variant="success">Processato</Badge>,
     "0": <Badge variant="warning">Da Processare</Badge>,
     "-1": <Badge variant="destructive">Errore</Badge>,
 };
 
-const sacsServiceOperationsMapping: { [key: string]: JSX.Element } = {
+export const sacsServiceOperationsMapping: { [key: string]: JSX.Element } = {
     "20": <b>Apertura Conto Persona Fisica</b>,
     "21": <b>Apertura Conto Persona Giuridica</b>,
     "22": <b>Cambio Stato Conto</b>,

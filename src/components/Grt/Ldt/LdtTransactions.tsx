@@ -1,7 +1,7 @@
 import {GenericFilters} from "@/components/GenericFilters.tsx";
 import {z} from "zod";
 import {GenericTable} from "@/components/GenericTable.tsx";
-import {ldtTransactionColumns} from "@/components/GenericTableColumn.tsx";
+import {ldtTransactionColumns, statusMapping} from "@/components/GenericTableColumn.tsx";
 import {LdtTransaction, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {ldtTransactions} from "@/services/ldt_services.ts";
@@ -75,6 +75,7 @@ const LdtTransactions = () => {
         <>
             <GenericFilters<z.infer<typeof ldtTransactionFilterSchema>>
                 schema={ldtTransactionFilterSchema}
+                mapping={statusMapping}
                 filters={ldtTransactionFilters}
                 filterFields={ldtTransactionFilterFields}
                 onFilter={(values) => handleFilter(values)}

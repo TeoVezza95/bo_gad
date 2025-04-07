@@ -27,12 +27,12 @@ import {DatePicker} from "@/components/DatePicker";
 import {format} from "date-fns";
 import {Badge} from "@/components/ui/badge";
 import {DateRangePicker} from "@/components/DateRangePicker.tsx";
+import CustomSelect from "@/components/CustomSelect.tsx";
 
 // Definizione del tipo per ogni campo filtro
 export interface FilterField<FilterValues> {
     field: keyof FilterValues;
     label: string;
-    // Aggiungi "daterange" alle opzioni di type
     type?: "text" | "number" | "date" | "daterange" | "select";
     options?: { label: string; value: string }[];
 }
@@ -40,6 +40,7 @@ export interface FilterField<FilterValues> {
 // Props per il componente GenericFilters
 export interface GenericFiltersProps<FilterValues extends FieldValues> {
     schema: ZodSchema<FilterValues>;
+    mapping?: { [key: string]: { [optionKey: string]: JSX.Element } } | { [optionKey: string]: JSX.Element };
     filters?: FilterValues;
     filterFields: FilterField<FilterValues>[];
     onFilter: (values: FilterValues) => void;
@@ -49,6 +50,7 @@ export function GenericFilters<FilterValues extends FieldValues>({
                                                                      schema,
                                                                      filters = {} as FilterValues, // Usa i filtri passati dal padre come valore iniziale
                                                                      filterFields,
+                                                                     mapping,
                                                                      onFilter,
                                                                  }: GenericFiltersProps<FilterValues>) {
     const form = useForm<FilterValues>({
@@ -67,7 +69,7 @@ export function GenericFilters<FilterValues extends FieldValues>({
 
     const handleRemoveFilter = (key: string) => {
         setActiveFilters((prevFilters) => {
-            const updatedFilters = { ...prevFilters };
+            const updatedFilters = {...prevFilters};
             delete updatedFilters[key]; // 🔥 Rimuove la chiave selezionata
             return updatedFilters;
         });
@@ -76,7 +78,7 @@ export function GenericFilters<FilterValues extends FieldValues>({
         form.setValue(key as Path<FilterValues>, "" as PathValue<FilterValues, Path<FilterValues>>);
 
         // 🔹 Notifica il padre con i filtri aggiornati
-        const newFilters = { ...activeFilters };
+        const newFilters = {...activeFilters};
         delete newFilters[key];
         onFilter(newFilters);
     };
@@ -97,16 +99,47 @@ export function GenericFilters<FilterValues extends FieldValues>({
             <div className="flex justify-start gap-4">
                 {Object.entries(activeFilters)
                     .filter(([, value]) => value !== "" && value !== null && value !== undefined)
-                    .map(([key, value]) => (
-                        <Badge key={key} variant="gadBlue"
-                               className="flex items-center justify-between px-3 py-1 w-full">
-                            <div className="flex-1">{`${key}: ${value}`}</div>
-                            <Button className="bg-gadBlue h-2 w-2 p-1 ml-2 flex items-center justify-center"
-                            onClick={() =>handleRemoveFilter(key)}>
-                                <X size={12}/>
-                            </Button>
-                        </Badge>
-                    ))}
+                    .map(([key, value]) => {
+                        const fieldDef = filterFields.find((f) => f.field.toString() === key);
+                        const label = fieldDef ? fieldDef.label : key;
+                        let displayContent: JSX.Element | string;
+
+                        if (fieldDef && fieldDef.type === "daterange") {
+                            // Assumiamo che value sia un oggetto con le chiavi "from" e "to"
+                            const range = value as { from?: string; to?: string };
+                            const formattedFrom = range.from ? format(range.from, "dd/MM/yyyy") : "";
+                            const formattedTo = range.to ? format(range.to, "dd/MM/yyyy") : "";
+                            displayContent = `${formattedFrom} - ${formattedTo}`;
+                        } else {
+                            displayContent = value.toString();
+                            if (mapping) {
+                                if (Object.prototype.hasOwnProperty.call(mapping, key)) {
+                                    const fieldMapping = mapping[key] as { [optionKey: string]: JSX.Element };
+                                    displayContent = fieldMapping[value.toString()] || value.toString();
+                                } else {
+                                    displayContent =
+                                        (mapping as { [optionKey: string]: JSX.Element })[value.toString()] ||
+                                        value.toString();
+                                }
+                            }
+                        }
+
+                        return (
+                            <Badge
+                                key={key}
+                                variant="gadBlue"
+                                className="flex items-center justify-between px-3 py-1 w-full whitespace-nowrap"
+                            >
+                                <div className="flex items-center">{`${label}: ${displayContent}`}</div>
+                                <Button
+                                    className="bg-gadBlue h-2 w-2 p-1 ml-2 flex items-center justify-center"
+                                    onClick={() => handleRemoveFilter(key)}
+                                >
+                                    <X size={12}/>
+                                </Button>
+                            </Badge>
+                        );
+                    })}
             </div>
             <Drawer>
                 <DrawerTrigger asChild>
@@ -133,22 +166,23 @@ export function GenericFilters<FilterValues extends FieldValues>({
                                             key={idx}
                                             control={form.control}
                                             name={fieldDef.field as Path<FilterValues>}
-                                            render={({ field }) => (
+                                            render={({field}) => (
                                                 <FormItem>
                                                     <FormLabel>{fieldDef.label}</FormLabel>
                                                     <FormControl>
                                                         {fieldDef.type === "select" ? (
-                                                            <select
-                                                                {...field}
-                                                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-                                                            >
-                                                                <option value="">-- Seleziona --</option>
-                                                                {fieldDef.options?.map((option, optIdx) => (
-                                                                    <option key={optIdx} value={option.value}>
-                                                                        {option.label}
-                                                                    </option>
-                                                                ))}
-                                                            </select>
+                                                            <CustomSelect
+                                                                // Mappiamo le opzioni in un array contenente i valori (o, se necessario, possiamo mappare anche le label)
+                                                                items={fieldDef.options?.map((option) => option.value) || []}
+                                                                mapping={mapping}
+                                                                mappingKey={fieldDef.field.toString()}
+                                                                // Impostiamo il valore di default, convertendolo in stringa se presente
+                                                                defaultValue={field.value?.toString()}
+                                                                // Quando cambia il valore, invochiamo field.onChange con il valore selezionato
+                                                                onChange={(selectedValue) => {
+                                                                    field.onChange(selectedValue);
+                                                                }}
+                                                            />
                                                         ) : fieldDef.type === "date" ? (
                                                             <DatePicker
                                                                 value={field.value ? new Date(field.value) : null}
@@ -162,7 +196,6 @@ export function GenericFilters<FilterValues extends FieldValues>({
                                                             <DateRangePicker
                                                                 value={field.value}
                                                                 onChange={(range) => {
-                                                                    // Qui potresti voler formattare o gestire il valore
                                                                     field.onChange(range);
                                                                 }}
                                                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
@@ -175,8 +208,9 @@ export function GenericFilters<FilterValues extends FieldValues>({
                                                             />
                                                         )}
                                                     </FormControl>
+
                                                     <FormDescription>Inserisci {fieldDef.label}</FormDescription>
-                                                    <FormMessage />
+                                                    <FormMessage/>
                                                 </FormItem>
                                             )}
                                         />
