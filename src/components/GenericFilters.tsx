@@ -130,7 +130,7 @@ export function GenericFilters<FilterValues extends FieldValues>({
                                 variant="gadBlue"
                                 className="flex items-center justify-between px-3 py-1 w-full whitespace-nowrap"
                             >
-                                <div className="flex items-center">{`${label}: ${displayContent}`}</div>
+                                <div className="flex items-center whitespace-pre">{`${label}: `} {displayContent}</div>
                                 <Button
                                     className="bg-gadBlue h-2 w-2 p-1 ml-2 flex items-center justify-center"
                                     onClick={() => handleRemoveFilter(key)}
