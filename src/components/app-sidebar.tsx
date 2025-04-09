@@ -1,9 +1,8 @@
 import {useNavigate} from "react-router-dom"
-import {ChevronDown, Home, Users, Ruler, Tickets, LogOut} from "lucide-react"
+import {ChevronDown, Home, Users, Ruler, Tickets} from "lucide-react"
 import {
     Sidebar,
     SidebarContent,
-    SidebarFooter,
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,
@@ -15,7 +14,6 @@ import {
 } from "@/components/ui/sidebar"
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from "@radix-ui/react-collapsible"
 import mylLogo from '../assets/logo-MYLPlay.svg'
-import {Button} from "@/components/ui/button.tsx";
 import {AuthContext} from "@/context/AuthContext.tsx";
 import {useContext} from "react";
 // import gevLogo from '../assets/logo-GEV.svg'
@@ -87,7 +85,7 @@ export function AppSidebar() {
     if (!authContext) {
         throw new Error("AuthContext must be used within an AuthProvider");
     }
-    const { logout } = authContext;
+    // const { logout } = authContext;
 
     // La tua funzione di navigazione
     const handleClickNavigate = (path: string, param?: string) => {
@@ -108,14 +106,14 @@ export function AppSidebar() {
             <SidebarContent className="h-full">
                 <SidebarGroup className="flex-1">
                     <SidebarGroupLabel className="flex items-center justify-evenly my-8">
-                        <img src={mylLogo} className="h-full" alt="React logo"/>
-                        <span className="text-gadBlue font-bold text-[0.9rem]">GAD: BackOffice</span>
+                        <img src={mylLogo} className="h-full dark:bg-white" alt="React logo"/>
+                        <span className="text-gadBlue dark:text-white font-bold text-[0.9rem]">GAD: BackOffice</span>
                     </SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {items.map((item) => (
                                 <Collapsible key={item.title} defaultOpen={false}
-                                             className="group/collapsible font-medium text-gadBlue">
+                                             className="group/collapsible font-medium text-gadBlue dark:text-white">
                                     <SidebarMenuItem>
                                         <CollapsibleTrigger asChild>
                                             <SidebarMenuButton asChild>
@@ -160,10 +158,9 @@ export function AppSidebar() {
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
-
-                <SidebarFooter>
-                    <Button className="w-1/2 bg-gadBlue mx-auto mb-2" onClick={logout}><LogOut/>logOut</Button>
-                </SidebarFooter>
+                {/*<SidebarFooter>*/}
+                {/*    <Button className="w-1/2 bg-gadBlue mx-auto mb-2" onClick={logout}><LogOut/>logOut</Button>*/}
+                {/*</SidebarFooter>*/}
             </SidebarContent>
         </Sidebar>
     )

@@ -132,10 +132,10 @@ export function GenericFilters<FilterValues extends FieldValues>({
                             >
                                 <div className="flex items-center whitespace-pre">{`${label}: `} {displayContent}</div>
                                 <Button
-                                    className="bg-gadBlue h-2 w-2 p-1 ml-2 flex items-center justify-center"
+                                    className="bg-gadBlue dark:bg-white dark:shadow-white h-2 w-2 p-1 ml-2 flex items-center justify-center"
                                     onClick={() => handleRemoveFilter(key)}
                                 >
-                                    <X size={12}/>
+                                    <X size={12} className="dark:text-gadBlue"/>
                                 </Button>
                             </Badge>
                         );

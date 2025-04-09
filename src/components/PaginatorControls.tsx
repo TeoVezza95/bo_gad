@@ -39,7 +39,7 @@ const PaginationControls: React.FC<PaginationControlsProps> = ({
             <CustomSelect
                 items={pageOptions}
                 defaultValue={pageSize}
-                onChange={(newPageSize) => handlePageSizeChange(newPageSize)}
+                onChange={(newPageSize) => handlePageSizeChange(parseInt(newPageSize))}
             />
             <CustomPagination
                 currentPage={currentPage}
