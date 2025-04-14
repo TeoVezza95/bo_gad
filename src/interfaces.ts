@@ -98,7 +98,7 @@ export interface EwlTransaction {
     PSP_METHOD: string
 }
 
-export interface OnpTransaction{
+export interface OnpTransaction {
     ID: number,
     TXT_TYPE_ID: number,
     INSTRUCTION_ID: number,
@@ -111,7 +111,7 @@ export interface OnpTransaction{
     AMOUNT: number,
 }
 
-export interface ActBonus{
+export interface ActBonus {
     ID: number,
     USER_CURRENCY_AMOUNT: number,
     INSERTION_DATE: string,
@@ -125,7 +125,7 @@ export interface ActBonus{
     KPI_UPDATE_DATE: string
 }
 
-export interface ActStorni{
+export interface ActStorni {
     ID: number,
     USER_CURRENCY_AMOUNT: number,
     INSERTION_DATE: string,
@@ -139,7 +139,7 @@ export interface ActStorni{
     KPI_UPDATE_DATE: string
 }
 
-export interface SacsServiceOperation{
+export interface SacsServiceOperation {
     CAUSAL: string,
     N_OPERATIONS: number
 }
@@ -168,6 +168,74 @@ export interface Pagination {
     page: number;
     pageSize: number;
     total: number;
+}
+
+//VIRTUAL DETAIL
+
+export interface VirtualTransactionDetail {
+    id: string;
+    ticketId: string;
+    wagerAmount: number;     // importo scommesso
+    winAmount: number;       // importo vinto
+    refundAmount: number;    // importo rimborsato
+    ticketStatus: number;    // stato del ticket (es. 3)
+    bets: VirtualBet[];             // elenco delle puntate
+    systems: VirtualSystem[];       // elenco dei sistemi
+    transactions: VirtualTransactionsDetail[]; // elenco delle transazioni
+}
+
+export interface VirtualBet {
+    bet: string;
+    betid: number;
+    bonusFlag: number;
+    event: number;
+    eventDate: string;
+    eventDescription: string;
+    fixedEvent: number;
+    palimpsest: number;
+    platformDescription: string;
+    platformId: number;
+    results: string;
+    resultsDescription: string;
+    ticketId: string;
+    wagerAmount: number;
+}
+
+export interface VirtualSystem {
+    systemId: number;
+    ticketId: string;
+    systemType: number;
+    base: number;
+    combinations: number;
+    minWin: number;
+    minBonusWin: number;
+    maxWin: number;
+    maxBonusWin: number;
+}
+
+export interface VirtualTransactionsDetail {
+    id: string;
+    type: string;
+    date: string;
+    cmdTransaction: string | null;
+}
+
+//LOR WINNING DETAIL
+export interface LorWinningDetail {
+    id: number;
+    contestType: string;
+    contestCode: string;
+    insertDate: string;
+    winningBets: LorWinningBetsTransaction[];
+}
+
+export interface LorWinningBetsTransaction {
+    transactionId: string;
+    betId:string;
+    winningType: number;
+    grossImport: number;
+    netImport: number;
+    creditImport: number;
 }
 
 

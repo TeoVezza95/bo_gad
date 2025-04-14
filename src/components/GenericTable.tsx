@@ -11,13 +11,21 @@ import {
 import { TableColumn } from "@/interfaces";
 import { TruncatedCell } from "./TruncatedCell"; // Assicurati di usare il percorso corretto
 
-interface GenericTableProps<T> {
+// Estendiamo l'interfaccia dei props aggiungendo la prop actions.
+// Qui actions è opzionale ed è una funzione che riceve il dato della riga e restituisce un JSX.
+export interface GenericTableProps<T> {
     data: T[];
     columns: TableColumn<T>[];
     caption?: string;
+    actions?: (row: T) => React.ReactNode;
 }
 
-export const GenericTable = <T,>({ data, columns, caption }: GenericTableProps<T>) => {
+export const GenericTable = <T,>({
+                                     data,
+                                     columns,
+                                     caption,
+                                     actions,
+                                 }: GenericTableProps<T>) => {
     return (
         <div className="w-full overflow-auto">
             <Table className="w-full table-fixed">
@@ -27,6 +35,8 @@ export const GenericTable = <T,>({ data, columns, caption }: GenericTableProps<T
                         {columns.map((column, index) => (
                             <TableHead key={index}>{column.header}</TableHead>
                         ))}
+                        {/* Aggiungiamo una colonna per le actions se la prop è definita */}
+                        {actions && <TableHead>Actions</TableHead>}
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -46,6 +56,11 @@ export const GenericTable = <T,>({ data, columns, caption }: GenericTableProps<T
                                     </TableCell>
                                 );
                             })}
+                            {actions && (
+                                <TableCell>
+                                    {actions(row)}
+                                </TableCell>
+                            )}
                         </TableRow>
                     ))}
                 </TableBody>

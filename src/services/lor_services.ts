@@ -3,14 +3,14 @@ import {properties} from "../../properties.ts";
 import {
     LorContest,
     LorRegistryKey,
-    LorTransaction,
+    LorTransaction, LorWinningDetail,
     LorWinningList,
-    Pagination
+    Pagination,
 } from "@/interfaces.ts";
 import {formattedDate} from "@/lib/utils.ts";
 
 //LOR
-const lorTransactions = async (
+export const lorTransactions = async (
     filters: Record<string, unknown> = {},
     page: number,
     pageSize: number):
@@ -35,7 +35,7 @@ const lorTransactions = async (
     throw Error(`Invalid response for ldt transaction request ${properties.rest.lor.transactions}`);
 }
 
-const lorRegistryKeys = async (
+export const lorRegistryKeys = async (
     filters: Record<string, unknown> = {},
     page: number,
     pageSize: number):
@@ -60,7 +60,7 @@ const lorRegistryKeys = async (
     throw Error(`Invalid response for ldt transaction request ${properties.rest.lor.registerKeys}`);
 }
 
-const lorContests = async (
+export const lorContests = async (
     filters: Record<string, unknown> = {},
     page: number,
     pageSize: number):
@@ -86,7 +86,7 @@ const lorContests = async (
     throw Error(`Invalid response for ldt transaction request ${properties.rest.lor.contests}`);
 }
 
-const lorWinningLists = async (
+export const lorWinningLists = async (
     filters: Record<string, unknown> = {},
     page: number,
     pageSize: number):
@@ -112,4 +112,17 @@ const lorWinningLists = async (
 
 }
 
-export {lorTransactions, lorRegistryKeys, lorContests, lorWinningLists};
+export const lorWinningDetail = async (
+    id: string | number
+): Promise<LorWinningDetail> => {
+    const response = await axios.post(
+        `${properties.rest.virtual.baseUrl}${properties.rest.lor.winningListDetail}`,
+        {id}
+    );
+
+    if (response && response.data) {
+        // Presupponiamo che il backend restituisca un oggetto con proprietà "data"
+        return response.data.data || response.data;
+    }
+    throw new Error(`Risposta non valida dal server per ${properties.rest.lor.winningListDetail}`);
+};

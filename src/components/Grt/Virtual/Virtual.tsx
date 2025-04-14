@@ -12,7 +12,7 @@ const Virtual = () => {
 
     return (
         <>
-            <CardsContainer items={data} cardClass={"bg-red-300 text-gadBlue"}/>
+            <CardsContainer items={data} cardClass={"bg-[#7bc843] text-orange-200"}/>
             <Tabs defaultValue="transactions">
                 <TabsList>
                     <TabsTrigger value="transactions">Transazioni</TabsTrigger>

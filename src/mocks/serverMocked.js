@@ -2,10 +2,10 @@ import express from "express";
 import cors from "cors";
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import {fileURLToPath} from "url";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { subDays, format, parseISO, isAfter } from "date-fns";
+import {subDays, format, parseISO, isAfter} from "date-fns";
 
 // Ricava __filename e __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -41,13 +41,13 @@ function authenticateToken(req, res, next) {
 
 // Endpoint di Login
 app.post("/login", async (req, res) => {
-    const { username, password } = req.body;
+    const {username, password} = req.body;
 
     let userExists = users.find((user) => user.username === username);
     if (!userExists) {
         try {
             const hashedPassword = await bcrypt.hash(password, 10);
-            users.push({ username, password: hashedPassword });
+            users.push({username, password: hashedPassword});
         } catch (err) {
             return res.status(500).send("Error registering user");
         }
@@ -60,13 +60,13 @@ app.post("/login", async (req, res) => {
 
     try {
         if (await bcrypt.compare(password, user.password)) {
-            const accessToken = jwt.sign({ username: user.username }, SECRET_KEY, {
+            const accessToken = jwt.sign({username: user.username}, SECRET_KEY, {
                 expiresIn: "15m",
             });
-            const refreshToken = jwt.sign({ username: user.username }, SECRET_KEY, {
+            const refreshToken = jwt.sign({username: user.username}, SECRET_KEY, {
                 expiresIn: "7d",
             });
-            res.json({ accessToken, refreshToken });
+            res.json({accessToken, refreshToken});
         } else {
             res.status(403).send("Incorrect password");
         }
@@ -77,7 +77,7 @@ app.post("/login", async (req, res) => {
 
 // Endpoint di Logout
 app.post("/logout", (req, res) => {
-    res.status(201).json({ message: "Logout completed" });
+    res.status(201).json({message: "Logout completed"});
 });
 
 // Rotta protetta
@@ -92,8 +92,8 @@ app.post("/login/refresh-jwt-token", (req, res) => {
 
     jwt.verify(token, SECRET_KEY, (err, user) => {
         if (err) return res.status(403).send("Invalid token");
-        const accessToken = jwt.sign({ username: user.username }, SECRET_KEY, { expiresIn: "15m" });
-        res.json({ accessToken });
+        const accessToken = jwt.sign({username: user.username}, SECRET_KEY, {expiresIn: "15m"});
+        res.json({accessToken});
     });
 });
 
@@ -105,7 +105,7 @@ function paginate(data, page = 1, pageSize = 10) {
     const startIndex = (page - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     const paginatedData = data.slice(startIndex, endIndex);
-    return { total, page, pageSize, data: paginatedData };
+    return {total, page, pageSize, data: paginatedData};
 }
 
 
@@ -148,13 +148,13 @@ const loadAndFilterData = (filePath, keyObj, filters) => {
         return filteredData || (keyObj ? jsonData[keyObj] : jsonData);
     } catch (err) {
         console.error(`Errore nella lettura/parsing del file: ${filePath}`, err);
-        return { error: "Errore interno del server" };
+        return {error: "Errore interno del server"};
     }
 };
 
 // Endpoint con paginazione per GRT-GEV
 app.post("/gev_transactions", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "GRT-GEV/gev_transactions.json"),
         "transactions",
@@ -164,7 +164,7 @@ app.post("/gev_transactions", (req, res) => {
 });
 
 app.post("/gev_registry_keys", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "GRT-GEV/gev_registry_keys.json"),
         "registerKeys",
@@ -175,7 +175,7 @@ app.post("/gev_registry_keys", (req, res) => {
 
 // GRT-LDT endpoints
 app.post("/ldt_transactions", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "GRT-LDT/ldt_transactions.json"),
         "transactions",
@@ -185,7 +185,7 @@ app.post("/ldt_transactions", (req, res) => {
 });
 
 app.post("/ldt_registry_keys", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "GRT-LDT/ldt_registry_keys.json"),
         "registerKeys",
@@ -195,7 +195,7 @@ app.post("/ldt_registry_keys", (req, res) => {
 });
 
 app.post("/ldt_contests", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "GRT-LDT/ldt_contests.json"),
         "contests",
@@ -206,7 +206,7 @@ app.post("/ldt_contests", (req, res) => {
 
 // GRT-LOR endpoints
 app.post("/lor_transactions", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "GRT-LOR/lor_transactions.json"),
         "transactions",
@@ -216,7 +216,7 @@ app.post("/lor_transactions", (req, res) => {
 });
 
 app.post("/lor_registry_keys", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "GRT-LOR/lor_registry_keys.json"),
         "registerKeys",
@@ -226,7 +226,7 @@ app.post("/lor_registry_keys", (req, res) => {
 });
 
 app.post("/lor_contests", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "GRT-LOR/lor_contests.json"),
         "contests",
@@ -236,7 +236,7 @@ app.post("/lor_contests", (req, res) => {
 });
 
 app.post("/lor_winning_lists", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "GRT-LOR/lor_winning_lists.json"),
         "winningLists",
@@ -245,9 +245,34 @@ app.post("/lor_winning_lists", (req, res) => {
     res.json(paginate(allData, page, pageSize));
 });
 
+app.post("/lor_winning_list_details", (req, res) => {
+    const {id} = req.body;
+
+    if (!id) {
+        return res.status(400).json({error: "ID is required"});
+    }
+    const filePath = path.join(__dirname, "GRT-LOR/lor_winning_list_details.json");
+
+    try {
+        const rawData = fs.readFileSync(filePath, "utf8");
+        const jsonData = JSON.parse(rawData);
+        // Supponiamo che il file contenga un array di oggetti
+        const detail = jsonData.find((item) => item.id === id);
+
+        if (detail) {
+            res.json(detail);
+        } else {
+            res.status(404).json({error: "Winning list detail not found"});
+        }
+    } catch (err) {
+        console.error("Errore nella lettura del file:", err);
+        res.status(500).json({error: "Internal server error"});
+    }
+});
+
 // Endpoint con paginazione per GRT-VIRTUAL
 app.post("/virtual_transactions", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "GRT-VIRTUAL/virtual_transactions.json"),
         "transactions",
@@ -256,9 +281,35 @@ app.post("/virtual_transactions", (req, res) => {
     res.json(paginate(allData, page, pageSize));
 });
 
+app.post("/virtual_transaction_details", (req, res) => {
+    const {id} = req.body;
+
+    if (!id) {
+        return res.status(400).json({error: "ID is required"});
+    }
+    const filePath = path.join(__dirname, "GRT-VIRTUAL/virtual_transaction_details.json");
+
+    try {
+        const rawData = fs.readFileSync(filePath, "utf8");
+        const jsonData = JSON.parse(rawData);
+        // Supponiamo che il file contenga un array di oggetti
+        const detail = jsonData.find((item) => item.id === id);
+
+        if (detail) {
+            res.json(detail);
+        } else {
+            res.status(404).json({error: "Transaction detail not found"});
+        }
+    } catch (err) {
+        console.error("Errore nella lettura del file:", err);
+        res.status(500).json({error: "Internal server error"});
+    }
+});
+
+
 // ACT endpoints
 app.post("/ewl_transactions", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "ACT/EWL_TRANSACTION.json"),
         "",
@@ -268,7 +319,7 @@ app.post("/ewl_transactions", (req, res) => {
 });
 
 app.post("/onp_transactions", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "ACT/ONP_TRANSACTION.json"),
         "",
@@ -278,7 +329,7 @@ app.post("/onp_transactions", (req, res) => {
 });
 
 app.post("/act_bonus", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "ACT/ACT_PSP_BONUS.json"),
         "",
@@ -288,7 +339,7 @@ app.post("/act_bonus", (req, res) => {
 });
 
 app.post("/act_storni", (req, res) => {
-    const { filters = {}, page = 1, pageSize = 10 } = req.body;
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
     const allData = loadAndFilterData(
         path.join(__dirname, "ACT/ACT_PSP_STORNI.json"),
         "",
@@ -341,7 +392,7 @@ app.get("/gev_transactions/summary", (req, res) => {
         res.json(result);
     } catch (error) {
         console.error("Errore nel caricamento delle transazioni:", error);
-        res.status(500).json({ error: "Errore interno del server" });
+        res.status(500).json({error: "Errore interno del server"});
     }
 });
 

@@ -134,7 +134,7 @@ const HomePage = () => {
                 HOMEPAGE
             <CardsContainer items={data}/>
             <div className="flex gap-4 my-8 w-full h-full justify-center">
-                <div className="w-1/3">
+                <div className="">
                     {transactionsNumber.length > 0 && <TestChart data={transactionsNumber} config={chartConfig2} className={"h-full"}/>}
                 </div>
                 <Card className="w-1/3">

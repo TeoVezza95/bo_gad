@@ -26,6 +26,7 @@ export const properties = {
             registerKeys: "lor_registry_keys",
             contests: "lor_contests",
             winningLists: "lor_winning_lists",
+            winningListDetail: "lor_winning_list_details",
             summary: "/summary"
         },
         virtual: {
@@ -33,6 +34,7 @@ export const properties = {
                 ? import.meta.env.VITE_BO_GAD_API_BASE_PATH
                 : import.meta.env.VITE_MOCK_BASE_PATH,
             transactions: "virtual_transactions",
+            transactionDetail: "virtual_transaction_details",
         },
         act: {
             baseUrl: import.meta.env.VITE_CHATBOT_API_BASE_PATH

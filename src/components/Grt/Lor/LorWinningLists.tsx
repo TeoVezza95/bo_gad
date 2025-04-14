@@ -6,6 +6,7 @@ import {LorWinningList, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {lorWinningLists} from "@/services/lor_services.ts";
 import PaginationControls from "@/components/PaginatorControls.tsx";
+import LorWinningDetailDialog from "@/components/Grt/Lor/LorWinningDetailDialog.tsx";
 
 // Schema per le transazioni
 const LorWinningListFilterSchema = z.object({
@@ -79,7 +80,12 @@ const LorWinningLists = () => {
                 filterFields={LorWinningListFilterFields}
                 onFilter={(values) => handleFilter(values)}
             />
-            <GenericTable data={winningLists} columns={LorWinningListColumns}/>
+            <GenericTable data={winningLists} columns={LorWinningListColumns} actions={(row) => (
+                <div className="flex gap-2">
+                    <LorWinningDetailDialog
+                        id={row.id}/> {/* Puoi aggiungere altri bottoni se necessario */}
+                </div>
+            )}/>
             <PaginationControls
                 pageOptions={pageOptions}
                 totalRecords={totalRecords}

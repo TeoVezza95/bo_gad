@@ -1,91 +1,93 @@
-{
-  "id": "R2502171605289566C6AFGNT7FXG14D3K",
-  "ticketId": "EC000D9F7E03",
-  "wagerAmount:": 150,
-  "winAmount": 204,
-  "refundAmount": 0,
-  "ticketStatus": 3,
-  "bets": [
-    {
-      "bet": "Vincente",
-      "betid": 1,
-      "bonusFlag": 0,
-      "event": 8,
-      "eventDate": "2025-02-17T15:06:00",
-      "eventDescription": "City Park",
-      "fixedEvent": 0,
-      "palimpsest": 2502901174,
-      "platformDescription": "Inspired",
-      "platformId": 34,
-      "results": "1",
-      "resultsDescription": "Pezzo Caldo",
-      "ticketId": "EC000D9F7E03",
-      "wagerAmount": 408
-    },
-    {
-      "bet": "Piazzato 2 (P1-2)",
-      "betid": 2,
-      "bonusFlag": 0,
-      "event": 8,
-      "eventDate": "2025-02-17T15:06:00",
-      "eventDescription": "City Park",
-      "fixedEvent": 0,
-      "palimpsest": 2502901174,
-      "platformDescription": "Inspired",
-      "platformId": 34,
-      "results": "2",
-      "resultsDescription": "Bacco Tabacco",
-      "ticketId": "EC000D9F7E03",
-      "wagerAmount": 1240
-    },
-    {
-      "bet": "Piazzato 3 (P1-3)",
-      "betid": 3,
-      "bonusFlag": 0,
-      "event": 8,
-      "eventDate": "2025-02-17T15:06:00",
-      "eventDescription": "City Park",
-      "fixedEvent": 0,
-      "palimpsest": 2502901174,
-      "platformDescription": "Inspired",
-      "platformId": 34,
-      "results": "3",
-      "resultsDescription": "Donald",
-      "ticketId": "EC000D9F7E03",
-      "wagerAmount": 106
-    }
-  ],
-  "systems": [
-    {
-      "systemId" : 61,
-      "ticketId" : "EC000D9F7E03",
-      "systemType" : 1,
-      "base" : 50,
-      "combinations" : 3,
-      "minWin" : 53,
-      "minBonusWin" : 0,
-      "maxWin" : 620,
-      "maxBonusWin" : 0
-    }
-  ],
-  "transactions": [
-    {
-      "id": "T250217160717448B8NYIQAG5FIOPABGP",
-      "type": "Credit",
-      "date": "2025-02-17 16:07:18",
-      "cmdTransaction": "86::1::1000001876::1739804837855::94"
-    },
-    {
-      "id": "T250217160550097LOQNMLMLFBT5JW13I",
-      "type": "Commit",
-      "date": "2025-02-17 16:05:50",
-      "cmdTransaction": null
-    },
-    {
-      "id": "T250217160528956QEOVD735EAOTJLG2R",
-      "type": "Reserve",
-      "date": "2025-02-17 16:05:29",
-      "cmdTransaction": "86::1::1000001876::1739804729572::94"
-    }
-  ]
-}
+[
+  {
+    "id": "R2502171605289566C6AFGNT7FXG14D3K",
+    "ticketId": "EC000D9F7E03",
+    "wagerAmount:": 150,
+    "winAmount": 204,
+    "refundAmount": 0,
+    "ticketStatus": 3,
+    "bets": [
+      {
+        "bet": "Vincente",
+        "betid": 1,
+        "bonusFlag": 0,
+        "event": 8,
+        "eventDate": "2025-02-17T15:06:00",
+        "eventDescription": "City Park",
+        "fixedEvent": 0,
+        "palimpsest": 2502901174,
+        "platformDescription": "Inspired",
+        "platformId": 34,
+        "results": "1",
+        "resultsDescription": "Pezzo Caldo",
+        "ticketId": "EC000D9F7E03",
+        "wagerAmount": 408
+      },
+      {
+        "bet": "Piazzato 2 (P1-2)",
+        "betid": 2,
+        "bonusFlag": 0,
+        "event": 8,
+        "eventDate": "2025-02-17T15:06:00",
+        "eventDescription": "City Park",
+        "fixedEvent": 0,
+        "palimpsest": 2502901174,
+        "platformDescription": "Inspired",
+        "platformId": 34,
+        "results": "2",
+        "resultsDescription": "Bacco Tabacco",
+        "ticketId": "EC000D9F7E03",
+        "wagerAmount": 1240
+      },
+      {
+        "bet": "Piazzato 3 (P1-3)",
+        "betid": 3,
+        "bonusFlag": 0,
+        "event": 8,
+        "eventDate": "2025-02-17T15:06:00",
+        "eventDescription": "City Park",
+        "fixedEvent": 0,
+        "palimpsest": 2502901174,
+        "platformDescription": "Inspired",
+        "platformId": 34,
+        "results": "3",
+        "resultsDescription": "Donald",
+        "ticketId": "EC000D9F7E03",
+        "wagerAmount": 106
+      }
+    ],
+    "systems": [
+      {
+        "systemId": 61,
+        "ticketId": "EC000D9F7E03",
+        "systemType": 1,
+        "base": 50,
+        "combinations": 3,
+        "minWin": 53,
+        "minBonusWin": 0,
+        "maxWin": 620,
+        "maxBonusWin": 0
+      }
+    ],
+    "transactions": [
+      {
+        "id": "T250217160717448B8NYIQAG5FIOPABGP",
+        "type": "Credit",
+        "date": "2025-02-17 16:07:18",
+        "cmdTransaction": "86::1::1000001876::1739804837855::94"
+      },
+      {
+        "id": "T250217160550097LOQNMLMLFBT5JW13I",
+        "type": "Commit",
+        "date": "2025-02-17 16:05:50",
+        "cmdTransaction": null
+      },
+      {
+        "id": "T250217160528956QEOVD735EAOTJLG2R",
+        "type": "Reserve",
+        "date": "2025-02-17 16:05:29",
+        "cmdTransaction": "86::1::1000001876::1739804729572::94"
+      }
+    ]
+  }
+]

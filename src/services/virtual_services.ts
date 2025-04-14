@@ -1,4 +1,4 @@
-import {VirtualTransaction, Pagination} from "@/interfaces.ts";
+import {Pagination, VirtualTransaction, VirtualTransactionDetail} from "@/interfaces.ts";
 import axios from "axios";
 import {properties} from "../../properties.ts";
 import {formattedDate} from "@/lib/utils.ts";
@@ -34,6 +34,21 @@ export const virtualTransactions = async (
     throw new Error(`Risposta non valida dal server per ${properties.rest.virtual.transactions}`);
 };
 
+
+export const virtualDetailTransaction = async (
+    id: string
+): Promise<VirtualTransactionDetail> => {
+    const response = await axios.post(
+        `${properties.rest.virtual.baseUrl}${properties.rest.virtual.transactionDetail}`,
+        {id}
+    );
+
+    if (response && response.data) {
+        // Presupponiamo che il backend restituisca un oggetto con proprietà "data"
+        return response.data.data || response.data;
+    }
+    throw new Error(`Risposta non valida dal server per ${properties.rest.virtual.transactionDetail}`);
+};
 
 // export const virtualTransactionSummary = async () => {
 //     const response = await axios.get(

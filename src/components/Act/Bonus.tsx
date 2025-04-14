@@ -1,7 +1,7 @@
 import {GenericFilters} from "@/components/GenericFilters.tsx";
 import {z} from "zod";
 import {GenericTable} from "@/components/GenericTable.tsx";
-import {actBonusColumns} from "@/components/GenericTableColumn.tsx";
+import {actBonusColumns, bonusOperationMapping} from "@/components/GenericTableColumn.tsx";
 import {ActBonus, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import PaginationControls from "@/components/PaginatorControls.tsx";
@@ -18,7 +18,13 @@ const bonusFilterSchema = z.object({
 });
 
 const bonusFilterFields: FilterField<z.infer<typeof bonusFilterSchema>>[] = [
-    {field: "OPERATION_ID", label: "Operazione", type: "text"},
+    {
+        field: "OPERATION_ID", label: "Operazione", type: "select", options: [
+            {label: "Creation Bonus Bag", value: "9"},
+            {label: "Removal", value: "19"},
+            {label: "Expired", value: "20"},
+        ]
+    },
     {field: "DATE_RANGE", label: "Data", type: "daterange"},
 ]
 
@@ -59,6 +65,7 @@ const Bonus = () => {
         <>
             <GenericFilters<z.infer<typeof bonusFilterSchema>>
                 schema={bonusFilterSchema}
+                mapping={bonusOperationMapping}
                 filters={bonusFilters}
                 filterFields={bonusFilterFields}
                 onFilter={(values) => handleFilter(values)}

@@ -6,6 +6,7 @@ import {VirtualTransaction, FilterField} from "@/interfaces.ts";
 import {useEffect, useState} from "react";
 import {virtualTransactions} from "@/services/virtual_services.ts";
 import PaginationControls from "@/components/PaginatorControls.tsx";
+import VirtualTransactionDetailDialog from "@/components/Grt/Virtual/VirtualTransactionDetailDialog.tsx";
 
 // Schema per le transazioni
 const virtualTransactionFilterSchema = z.object({
@@ -83,7 +84,13 @@ const VirtualTransactions = () => {
                 filterFields={virtualTransactionFilterFields}
                 onFilter={(values) => handleFilter(values)}
             />
-            <GenericTable data={virtualTransaction} columns={virtualTransactionColumns}/>
+            <GenericTable data={virtualTransaction} columns={virtualTransactionColumns}
+                          actions={(row) => (
+                              <div className="flex gap-2">
+                                  <VirtualTransactionDetailDialog transactionId={row.id}/> {/* Puoi aggiungere altri bottoni se necessario */}
+                              </div>
+                          )}
+            />
             <PaginationControls
                 pageOptions={pageOptions}
                 totalRecords={totalRecords}
