@@ -107,9 +107,9 @@ export function GenericFilters<FilterValues extends FieldValues>({
                         if (fieldDef && fieldDef.type === "daterange") {
                             // Assumiamo che value sia un oggetto con le chiavi "from" e "to"
                             const range = value as { from?: string; to?: string };
-                            const formattedFrom = range.from ? format(range.from, "dd/MM/yyyy") : "";
-                            const formattedTo = range.to ? format(range.to, "dd/MM/yyyy") : "";
-                            displayContent = `${formattedFrom} - ${formattedTo}`;
+                            const formattedFrom = range.from ? format(range.from, "dd/MM/yyyy HH:mm") : "";
+                            const formattedTo = range.to ? format(range.to, "dd/MM/yyyy HH:mm") : "";
+                            displayContent = `${formattedFrom.replace("00:00","")} - ${formattedTo.replace("00:00","")}`;
                         } else {
                             displayContent = value.toString();
                             if (mapping) {
