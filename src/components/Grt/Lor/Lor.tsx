@@ -22,7 +22,7 @@ const Lor = () => {
                     <TabsTrigger value="transactions">Transazioni</TabsTrigger>
                     <TabsTrigger value="registryKeys">Conti Registrati</TabsTrigger>
                     <TabsTrigger value="contests">Concorsi</TabsTrigger>
-                    <TabsTrigger value="winningLists">Giocate Vincenti</TabsTrigger>
+                    <TabsTrigger value="winningLists">Lista Vincenti</TabsTrigger>
                 </TabsList>
                 <TabsContent value="transactions">
                     <LorTransactions/>

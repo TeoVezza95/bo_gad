@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Abilita CORS e parsing del body JSON
 app.use(cors());
@@ -395,6 +395,62 @@ app.get("/gev_transactions/summary", (req, res) => {
         res.status(500).json({error: "Errore interno del server"});
     }
 });
+
+
+//SACS
+app.post("/riepilogo_movimentazioni", (req, res) => {
+    const {filters = {}, page = 1, pageSize = 100} = req.body;
+    const allData = loadAndFilterData(
+        path.join(__dirname, "SACS/riepilogo_movimentazioni.json"),
+        "movements",
+        filters
+    );
+    res.json(paginate(allData, page, pageSize));
+});
+
+app.post("/riepilogo_operazioni_servizio", (req, res) => {
+    const {filters = {}, page = 1, pageSize = 100} = req.body;
+    const allData = loadAndFilterData(
+        path.join(__dirname, "SACS/riepilogo_operazioni_servizio.json"),
+        "serviceOperations",
+        filters
+    );
+    res.json(paginate(allData, page, pageSize));
+});
+
+// Endpoint con paginazione per Conti autoesclusi
+app.post("/conti_autoesclusi", (req, res) => {
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
+    const allData = loadAndFilterData(
+        path.join(__dirname, "Sacs/conti_autoesclusi.json"),
+        "selfExcludedAccounts",
+        filters
+    );
+    res.json(paginate(allData, page, pageSize));
+});
+
+// Endpoint con paginazione per Conti dormienti
+app.post("/conti_dormienti", (req, res) => {
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
+    const allData = loadAndFilterData(
+        path.join(__dirname, "Sacs/conti_dormienti.json"),
+        "dormantAccounts",
+        filters
+    );
+    res.json(paginate(allData, page, pageSize));
+});
+
+// Endpoint con paginazione per Conti senza subreg
+app.post("/conti_senza_subregistrazione", (req, res) => {
+    const {filters = {}, page = 1, pageSize = 10} = req.body;
+    const allData = loadAndFilterData(
+        path.join(__dirname, "Sacs/conti_senza_subregistrazione.json"),
+        "accounts",
+        filters
+    );
+    res.json(paginate(allData, page, pageSize));
+});
+
 
 // Analoghi summary per LDT e LOR (rimangono invariati)
 

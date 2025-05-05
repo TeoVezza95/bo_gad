@@ -4,7 +4,6 @@ import {
     Dialog,
     DialogContent,
     DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -13,7 +12,7 @@ import {LorWinningDetail} from "@/interfaces.ts";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {GenericTable} from "@/components/GenericTable.tsx";
 import {lorWinningDetail} from "@/services/lor_services.ts";
-import {LorWinningBetsTransactionColumns} from "@/components/GenericTableColumn.tsx";
+import {LorWinningBetsTransactionColumns, typeMapping} from "@/components/GenericTableColumn.tsx";
 
 interface LorWinningDetailProps {
     id: number;
@@ -59,7 +58,7 @@ const LorWinningDetailDialog: React.FC<LorWinningDetailProps> = ({
             </div>
             <div className="py-1">
                 <dt className="font-bold">Tipologia:</dt>
-                <dd>{detail.contestType}</dd>
+                <dd>{typeMapping[detail.contestType] || detail.contestType}</dd>
             </div>
             <div className="py-1">
                 <dt className="font-bold">Concorso:</dt>
@@ -76,12 +75,12 @@ const LorWinningDetailDialog: React.FC<LorWinningDetailProps> = ({
         if (!winningDetail) return null;
 
         return (
-            <div className="flex gap-4">
+            <div className="flex gap-4 pb-6">
 
                 <div className="w-1/4">
                     <Card className="shadow-md h-full">
                         <CardHeader>
-                            <CardTitle>Dettagli Transazione</CardTitle>
+                            <CardTitle>Dettagli Vincita</CardTitle>
                         </CardHeader>
                         <CardContent>
                             {renderLorWinningDetailsTable(winningDetail)}
@@ -93,41 +92,11 @@ const LorWinningDetailDialog: React.FC<LorWinningDetailProps> = ({
                 <div className="w-3/4">
                     {/* Griglia interna: 2 colonne, ma la card "Bets" potrà occupare entrambe */}
                     <div className="grid grid-cols-1 gap-4">
-                        {/*/!* Systems *!/*/}
-                        {/*{winningDetail.systems && winningDetail.systems.length > 0 && (*/}
-                        {/*    <Card className="shadow-md">*/}
-                        {/*        <CardHeader>*/}
-                        {/*            <CardTitle>Systems</CardTitle>*/}
-                        {/*        </CardHeader>*/}
-                        {/*        <CardContent>*/}
-                        {/*            <GenericTable*/}
-                        {/*                data={winningDetail.systems}*/}
-                        {/*                columns={virtualSystemColumns}*/}
-                        {/*            />*/}
-                        {/*        </CardContent>*/}
-                        {/*    </Card>*/}
-                        {/*)}*/}
-
-                        {/*/!* Transactions *!/*/}
-                        {/*{transactionDetail.transactions && transactionDetail.transactions.length > 0 && (*/}
-                        {/*    <Card className="shadow-md">*/}
-                        {/*        <CardHeader>*/}
-                        {/*            <CardTitle>Transactions</CardTitle>*/}
-                        {/*        </CardHeader>*/}
-                        {/*        <CardContent>*/}
-                        {/*            <GenericTable*/}
-                        {/*                data={transactionDetail.transactions}*/}
-                        {/*                columns={lorWinningsDetailColumns}*/}
-                        {/*            />*/}
-                        {/*        </CardContent>*/}
-                        {/*    </Card>*/}
-                        {/*)}*/}
-
                         {/* Bets (col-span-2 => occupa l'intera riga) */}
                         {winningDetail.winningBets && winningDetail.winningBets.length > 0 && (
                             <Card className="shadow-md">
                                 <CardHeader>
-                                    <CardTitle>Bets</CardTitle>
+                                    <CardTitle>Accrediti</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <GenericTable
@@ -150,17 +119,17 @@ const LorWinningDetailDialog: React.FC<LorWinningDetailProps> = ({
             </DialogTrigger>
             <DialogContent className="max-w-[99vw]">
                 <DialogHeader>
-                    <DialogTitle>Dettaglio Transazione Virtuale</DialogTitle>
+                    <DialogTitle>Dettaglio Giocata Vincente</DialogTitle>
                     <DialogDescription>
-                        Qui vengono mostrati i dettagli della transazione.
+                        Qui vengono mostrati i dettagli della giocata vincente.
                     </DialogDescription>
                 </DialogHeader>
                 {loading && <p>Loading...</p>}
                 {error && <p className="text-red-500">{error}</p>}
                 {!loading && !error && winningDetail && renderTransactionDetails()}
-                <DialogFooter>
-                    <Button onClick={() => setOpen(false)}>Chiudi</Button>
-                </DialogFooter>
+                {/*<DialogFooter>*/}
+                {/*    <Button onClick={() => setOpen(false)}>Chiudi</Button>*/}
+                {/*</DialogFooter>*/}
             </DialogContent>
         </Dialog>
     );

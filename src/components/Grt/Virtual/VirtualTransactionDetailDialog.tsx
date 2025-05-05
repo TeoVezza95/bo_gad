@@ -4,7 +4,6 @@ import {
     Dialog,
     DialogContent,
     DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -65,19 +64,19 @@ const VirtualTransactionDetailDialog: React.FC<VirtualTransactionDetailProps> = 
                 <dd>{detail.ticketId}</dd>
             </div>
             <div className="py-1">
-                <dt className="font-bold">Wager Amount:</dt>
+                <dt className="font-bold">Importo:</dt>
                 <dd>{detail.wagerAmount}</dd>
             </div>
             <div className="py-1">
-                <dt className="font-bold">Win Amount:</dt>
+                <dt className="font-bold">Importo Vincita:</dt>
                 <dd>{detail.winAmount}</dd>
             </div>
             <div className="py-1">
-                <dt className="font-bold">Refund Amount:</dt>
+                <dt className="font-bold">Importo Rimborsato:</dt>
                 <dd>{detail.refundAmount}</dd>
             </div>
             <div className="py-1">
-                <dt className="font-bold">Ticket Status:</dt>
+                <dt className="font-bold">Stato:</dt>
                 <dd>{detail.ticketStatus}</dd>
             </div>
         </dl>
@@ -87,7 +86,7 @@ const VirtualTransactionDetailDialog: React.FC<VirtualTransactionDetailProps> = 
         if (!transactionDetail) return null;
 
         return (
-            <div className="flex gap-4">
+            <div className="flex gap-4 pb-6">
 
                 <div className="w-1/4">
                     <Card className="shadow-md h-full">
@@ -108,7 +107,7 @@ const VirtualTransactionDetailDialog: React.FC<VirtualTransactionDetailProps> = 
                         {transactionDetail.systems && transactionDetail.systems.length > 0 && (
                             <Card className="shadow-md">
                                 <CardHeader>
-                                    <CardTitle>Systems</CardTitle>
+                                    <CardTitle>Sistemi</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <GenericTable
@@ -119,31 +118,30 @@ const VirtualTransactionDetailDialog: React.FC<VirtualTransactionDetailProps> = 
                             </Card>
                         )}
 
-                        {/* Transactions */}
-                        {transactionDetail.transactions && transactionDetail.transactions.length > 0 && (
-                            <Card className="shadow-md">
-                                <CardHeader>
-                                    <CardTitle>Transactions</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <GenericTable
-                                        data={transactionDetail.transactions}
-                                        columns={virtualTransactionsDetailColumns}
-                                    />
-                                </CardContent>
-                            </Card>
-                        )}
-
-                        {/* Bets (col-span-2 => occupa l'intera riga) */}
                         {transactionDetail.bets && transactionDetail.bets.length > 0 && (
                             <Card className="shadow-md">
                                 <CardHeader>
-                                    <CardTitle>Bets</CardTitle>
+                                    <CardTitle>Scommesse</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <GenericTable
                                         data={transactionDetail.bets}
                                         columns={virtualBetColumns}
+                                    />
+                                </CardContent>
+                            </Card>
+                        )}
+
+                        {/* Transactions */}
+                        {transactionDetail.transactions && transactionDetail.transactions.length > 0 && (
+                            <Card className="shadow-md">
+                                <CardHeader>
+                                    <CardTitle>Transazioni</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <GenericTable
+                                        data={transactionDetail.transactions}
+                                        columns={virtualTransactionsDetailColumns}
                                     />
                                 </CardContent>
                             </Card>
@@ -169,9 +167,9 @@ const VirtualTransactionDetailDialog: React.FC<VirtualTransactionDetailProps> = 
                 {loading && <p>Loading...</p>}
                 {error && <p className="text-red-500">{error}</p>}
                 {!loading && !error && transactionDetail && renderTransactionDetails()}
-                <DialogFooter>
-                    <Button onClick={() => setOpen(false)}>Chiudi</Button>
-                </DialogFooter>
+                {/*<DialogFooter>*/}
+                {/*    <Button onClick={() => setOpen(false)}>Chiudi</Button>*/}
+                {/*</DialogFooter>*/}
             </DialogContent>
         </Dialog>
     );

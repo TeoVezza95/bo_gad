@@ -10,7 +10,6 @@ import {
     PopoverContent,
     PopoverPortal,
 } from "@/components/ui/popover";
-import {FormControl} from "@/components/ui/form";
 
 export interface DatePickerProps {
     value: Date | null;
@@ -30,7 +29,6 @@ export function DatePicker({
     return (
         <Popover open={open} onOpenChange={setOpen} modal>
             <PopoverTrigger asChild>
-                <FormControl>
                     <Button
                         variant="outline"
                         className={cn(
@@ -43,7 +41,6 @@ export function DatePicker({
                         {value ? format(value, "PPP") : <span>{placeholder || "Pick a date"}</span>}
                         <CalendarIcon className="ml-auto !h-5 !w-5 opacity-50 -translate-y-[110%]"/>
                     </Button>
-                </FormControl>
             </PopoverTrigger>
             <PopoverPortal>
                 <PopoverContent className="w-auto p-4 relative" align="start">

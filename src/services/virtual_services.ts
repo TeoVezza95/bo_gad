@@ -1,4 +1,9 @@
-import {Pagination, VirtualTransaction, VirtualTransactionDetail} from "@/interfaces.ts";
+import {
+    Pagination,
+    VirtualBet, VirtualSystem,
+    VirtualTransaction,
+    VirtualTransactionDetail, VirtualTransactionsDetail
+} from "@/interfaces.ts";
 import axios from "axios";
 import {properties} from "../../properties.ts";
 import {formattedDate} from "@/lib/utils.ts";
@@ -44,6 +49,44 @@ export const virtualDetailTransaction = async (
     );
 
     if (response && response.data) {
+        const virtualDetail: VirtualTransactionDetail = response.data.data || response.data;
+        if (virtualDetail.wagerAmount) {
+            virtualDetail.wagerAmount = virtualDetail.wagerAmount / 100;
+        }
+        if (virtualDetail.wagerAmount) {
+            virtualDetail.wagerAmount = virtualDetail.wagerAmount / 100;
+        }
+
+        virtualDetail?.bets.forEach((bet: VirtualBet) => {
+            if (bet.wagerAmount) {
+                bet.wagerAmount = bet.wagerAmount / 100;
+            }
+            if (bet.eventDate) {
+                bet.eventDate = formattedDate(bet.eventDate);
+            }
+        });
+        virtualDetail?.transactions.forEach((transaction: VirtualTransactionsDetail) => {
+            if (transaction.date) {
+                transaction.date = formattedDate(transaction.date);
+            }
+        });
+        virtualDetail?.systems.forEach((system: VirtualSystem) => {
+            if (system.minWin) {
+                system.minWin = system.minWin / 100;
+            }
+            if (system.maxWin) {
+                system.maxWin = system.maxWin / 100;
+            }
+            if (system.minBonusWin) {
+                system.minBonusWin = system.minBonusWin / 100;
+            }
+            if (system.maxBonusWin) {
+                system.maxBonusWin = system.maxBonusWin / 100;
+            }
+            if (system.base) {
+                system.base = system.base / 100
+            }
+        });
         // Presupponiamo che il backend restituisca un oggetto con proprietà "data"
         return response.data.data || response.data;
     }

@@ -139,11 +139,6 @@ export interface ActStorni {
     KPI_UPDATE_DATE: string
 }
 
-export interface SacsServiceOperation {
-    CAUSAL: string,
-    N_OPERATIONS: number
-}
-
 // TableColumn.ts
 export interface TableColumn<T, K extends keyof T = keyof T> {
     /** Testo da mostrare nell'intestazione della colonna */
@@ -231,11 +226,45 @@ export interface LorWinningDetail {
 
 export interface LorWinningBetsTransaction {
     transactionId: string;
-    betId:string;
+    betId: string;
     winningType: number;
     grossImport: number;
     netImport: number;
     creditImport: number;
 }
+
+//SACS
+
+export interface SacsMovementSummary {
+    causal: number;
+    operationNumber: number;
+    amount: number;
+}
+
+export interface SacsServiceOperation {
+    causal: string,
+    numeroOperazioni: number
+}
+
+export interface SacsSelfExcludedAccount {
+    contractId: string,
+    selfExclusionType: number,
+    insertDate: string,
+    startDate: string,
+    endDate: string
+}
+
+export interface SacsDormantAccount {
+    contractId: string,
+    amount: number,
+    insertDate: string,
+}
+
+export interface SacsWithoutSubregistrationAccount {
+    codiceConto: string,
+    idCnConto: number,
+    idReteConto: number
+}
+
 
 

@@ -3,7 +3,7 @@ import {properties} from "../../properties.ts";
 import {
     LorContest,
     LorRegistryKey,
-    LorTransaction, LorWinningDetail,
+    LorTransaction, LorWinningBetsTransaction, LorWinningDetail,
     LorWinningList,
     Pagination,
 } from "@/interfaces.ts";
@@ -121,8 +121,19 @@ export const lorWinningDetail = async (
     );
 
     if (response && response.data) {
-        // Presupponiamo che il backend restituisca un oggetto con proprietà "data"
-        return response.data.data || response.data;
+        const winningDetail = response.data.data || response.data;
+        winningDetail?.winningBets.forEach((bets: LorWinningBetsTransaction) => {
+            if (bets.creditImport) {
+                bets.creditImport = bets.creditImport / 100;
+            }
+            if (bets.grossImport) {
+                bets.grossImport = bets.grossImport / 100;
+            }
+            if (bets.netImport) {
+                bets.netImport = bets.netImport / 100;
+            }
+        });
+        return winningDetail;
     }
     throw new Error(`Risposta non valida dal server per ${properties.rest.lor.winningListDetail}`);
 };

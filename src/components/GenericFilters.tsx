@@ -109,7 +109,7 @@ export function GenericFilters<FilterValues extends FieldValues>({
                             const range = value as { from?: string; to?: string };
                             const formattedFrom = range.from ? format(range.from, "dd/MM/yyyy HH:mm") : "";
                             const formattedTo = range.to ? format(range.to, "dd/MM/yyyy HH:mm") : "";
-                            displayContent = `${formattedFrom.replace("00:00","")} - ${formattedTo.replace("00:00","")}`;
+                            displayContent = `${formattedFrom} - ${formattedTo}`;
                         } else {
                             displayContent = value.toString();
                             if (mapping) {

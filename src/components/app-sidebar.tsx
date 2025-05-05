@@ -39,7 +39,7 @@ const items = [
         url: "bo-gad/sacs",
         icon: Ruler,
         param: "sacs",
-        submenu: [["Apertura Giuridica", "aperGiur"], ["Riepilogo Movimentazioni", "riepMov"], ["Riepilogo Servizio", "riepServ"], ["Conti Autoesclusi", "contiAutoExc"], ["Conti Dormienti", "contiDorm"], ["Conti Senza Subregistrazione", "contiSenzaSub"]],
+        submenu: [["Apertura Giuridica", "aperGiur"], ["Riepilogo Movimentazioni", "riepMov"], ["Riepilogo Servizio", "riepServ"], ["Conti", "conti"],],
     },
     {
         title: "ACT",

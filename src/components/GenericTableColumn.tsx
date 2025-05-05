@@ -13,8 +13,8 @@ import {
     LorWinningBetsTransaction,
     LorWinningDetail,
     LorWinningList,
-    OnpTransaction,
-    SacsServiceOperation,
+    OnpTransaction, SacsDormantAccount, SacsMovementSummary, SacsSelfExcludedAccount,
+    SacsServiceOperation, SacsWithoutSubregistrationAccount,
     TableColumn,
     VirtualBet,
     VirtualSystem,
@@ -59,6 +59,11 @@ export const typeMapping: { [key: string]: JSX.Element } = {
     "MILLIONDAY": <Badge variant="water">MILLIONDAY</Badge>,
 }
 
+export const lorWinningTypeMapping: { [key: string]: JSX.Element } = {
+    "0": <Badge variant="gadBlue">Bassa</Badge>,
+    "1": <Badge variant="success">Alta</Badge>,
+}
+
 export const notificationMapping: { [key: string]: JSX.Element } = {
     "1": <Badge variant="success">Notificata</Badge>,
     "0": <Badge variant="warning">Da Notificare</Badge>,
@@ -100,6 +105,18 @@ export const sacsServiceOperationsMapping: { [key: string]: JSX.Element } = {
     "38": <b>Aggiorna Limiti Conto</b>,
     "39": <b>Aggiorna Pseudonimo Conto</b>,
     "40": <b>Aggiorna Posta Elettronica Conto</b>,
+};
+
+
+export const sacsMovementsSummaryMapping: { [key: string]: JSX.Element } = {
+    "1": <b>Ricarica</b>,
+    "2": <b>Storno Ricarica</b>,
+    "3": <b>Prelievo</b>,
+    "4": <b>Storno Prelievo</b>,
+    "5": <b>Bonus</b>,
+    "6": <b>Storno Bonus</b>,
+    "7": <b>Costi Servizi Aggiuntivi</b>,
+    "8": <b>Storno Costi Servizi Aggiuntivi</b>,
 };
 
 //GEV
@@ -189,7 +206,7 @@ export const lorContestColumns: TableColumn<LorContest>[] = [
     },
     {header: "Concorso", accessor: "contestCode"},
     {header: "Data Chiusura", accessor: "closureDate"},
-    {header: "Giocate Vincenti", accessor: "winningBets"},
+    {header: "Lista Vincenti", accessor: "winningBets"},
     {
         header: "Processato",
         accessor: "processed",
@@ -220,19 +237,26 @@ export const LorWinningListColumns: TableColumn<LorWinningList>[] = [
 
 //LOR WINNING DETAIL
 export const LorWinningDetailColumns: TableColumn<LorWinningDetail>[] = [
-    {header: "Tipologia", accessor: "contestType"},
+    {header: "ID", accessor: "id"},
     {header: "Concorso", accessor: "contestCode"},
     {header: "Data Inserimento", accessor: "insertDate"},
-    {header: "ID", accessor: "id"},
+    {
+        header: "Tipologia",
+        accessor: "contestType",
+    },
 ]
 
 export const LorWinningBetsTransactionColumns: TableColumn<LorWinningBetsTransaction>[] = [
-    {header: "ID Transazione", accessor: "transactionId"},
-    {header: "ID Giocata", accessor: "betId"},
-    {header: "Tipologia", accessor: "winningType"},
+    {header: "Schedina", accessor: "transactionId"},
+    {header: "Scontrino", accessor: "betId"},
     {header: "Importo Lordo", accessor: "grossImport"},
     {header: "Importo Netto", accessor: "netImport"},
-    {header: "Accredito", accessor: "creditImport"}
+    {header: "Importo Accredito", accessor: "creditImport"},
+    {
+        header: "Fascia Vincita",
+        accessor: "winningType",
+        render: (value) => lorWinningTypeMapping[String(value)] || <Badge variant={"default"}>{value || ""}</Badge>,
+    },
 ]
 
 //VIRTUAL
@@ -253,28 +277,30 @@ export const virtualTransactionsDetailColumns: TableColumn<VirtualTransactionsDe
     {header: "ID", accessor: "id"},
     {header: "Tipologia", accessor: "type"},
     {header: "Data", accessor: "date"},
-    {header: "Cmd Transazione", accessor: "cmdTransaction"},
+    {header: "Transazione CMD", accessor: "cmdTransaction"},
 ];
 
 export const virtualSystemColumns: TableColumn<VirtualSystem>[] = [
-    {header: "System ID", accessor: "systemId"},
-    {header: "Ticket ID", accessor: "ticketId"},
-    {header: "System Type", accessor: "systemType"},
+    {header: "#", accessor: "systemId"},
+    {header: "Ticket", accessor: "ticketId"},
+    {header: "Tipo", accessor: "systemType"},
+    {header: "Combinazioni", accessor: "combinations"},
     {header: "Base", accessor: "base"},
-    {header: "Combinations", accessor: "combinations"},
-    {header: "Min Win", accessor: "minWin"},
-    {header: "Max Win", accessor: "maxWin"},
+    {header: "Vincita Min", accessor: "minWin"},
+    {header: "Vincita Max", accessor: "maxWin"},
+    {header: "Bonus Min", accessor: "minBonusWin"},
+    {header: "Bonus Max", accessor: "maxBonusWin"},
 ];
 
 export const virtualBetColumns: TableColumn<VirtualBet>[] = [
-    {header: "Bet", accessor: "bet"},
-    {header: "Bet ID", accessor: "betid"},
-    {header: "Event", accessor: "event"},
-    {header: "Event Date", accessor: "eventDate"},
-    {header: "Event Desc.", accessor: "eventDescription"},
-    {header: "Results", accessor: "results"},
-    {header: "Results Desc.", accessor: "resultsDescription"},
-    {header: "Wager Amount", accessor: "wagerAmount"},
+    {header: "#", accessor: "betid"},
+    {header: "Scommessa", accessor: "bet"},
+    {header: "Evento", accessor: "event"},
+    {header: "Data Evento", accessor: "eventDate"},
+    {header: "Descrizione", accessor: "eventDescription"},
+    {header: "Risultato", accessor: "results"},
+    {header: "Desc. Risultato", accessor: "resultsDescription"},
+    {header: "Importo", accessor: "wagerAmount"},
 ];
 
 //ACT
@@ -335,13 +361,42 @@ export const aperGiurFormColumns: TableColumn<ActStorni>[] = [
 export const sacsServiceOperationsColumns: TableColumn<SacsServiceOperation>[] = [
     {
         header: "Causale",
-        accessor: "CAUSAL",
+        accessor: "causal",
         render: (value) => sacsServiceOperationsMapping[String(value)] || <Badge variant={"default"}>{value}</Badge>,
     },
-    {header: "Numero Operazioni", accessor: "N_OPERATIONS"},
+    {header: "Numero Operazioni", accessor: "numeroOperazioni"},
+];
+
+export const sacsMovementsSummaryColumns: TableColumn<SacsMovementSummary>[] = [
+    {
+        header: "Causale",
+        accessor: "causal",
+        render: (value) => sacsMovementsSummaryMapping[String(value)] ||
+            <Badge variant={"default"}>{value}</Badge>,
+    },
+    {header: "Numero Operazioni", accessor: "operationNumber"},
+    {header: "Importo", accessor: "amount"}
+]
+
+export const sacsSelfExcludedAccountsColumns: TableColumn<SacsSelfExcludedAccount>[] = [
+    {header: "Conto Gioco", accessor: "contractId"},
+    {header: "Tipologia", accessor: "selfExclusionType"},
+    {header: "Data Inizio", accessor: "startDate"},
+    {header: "Data Fine", accessor: "endDate"},
+    {header: "Data Inserimento", accessor: "insertDate"},
+];
+
+export const sacsDormantAccountsColumns: TableColumn<SacsDormantAccount>[] = [
+    {header: "Conto Gioco", accessor: "contractId"},
+    {header: "Importo", accessor: "amount"},
+    {header: "Data Inserimento", accessor: "insertDate"},
+];
+
+export const sacsWithoutSubregistrationAccountsColumns: TableColumn<SacsWithoutSubregistrationAccount>[] = [
+    {header: "Conto Gioco", accessor: "codiceConto"},
+    {header: "ID ContoCN", accessor: "idCnConto"},
+    {header: "ID Rete", accessor: "idReteConto"},
 ];
 
 
-//TODO per ewl  filtra solo per date trans e operation id
-// per onp  filtra solo per date trans e operation id, contract id
 
